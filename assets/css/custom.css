@@ -2772,7 +2772,7 @@ body::before {
       border: solid 3px transparent!important;
       letter-spacing: 1px!important;
       font-weight: 600!important;
-      font-family: 'futura-pt'!important;
+      font-family: 'FuturaBold'!important;
     transition: .2s!important;
   }
   .sqs-system-button:hover {
@@ -4746,21 +4746,17 @@ html:not(.js) .filter-nav__nav {
 .autocomplete__results {
   box-shadow:none!important;
 }
+@media only screen and (min-width: 600px) {
 .justify-centerdsktp {
-    @media only screen and (min-width: 600px) {
         justify-content: center;
         }
       }
+       @media only screen and (min-width: 800px) {   
 .searchbardsktp {
-    @media only screen and (min-width: 800px) {
       //  padding-left:25%!important;
       //  padding-right:25%!important;
-        }
-      @media only screen and (min-width: 700px) {
-       // padding-left:15%;
-       // padding-right:15%;
-        }
 }
+       }
 .tweak-mobile-bar-top-fixed .Mobile-bar--top {
 background-color: transparent!important;
 }
