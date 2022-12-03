@@ -1,0 +1,25 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _2_table-card
+Title: Table Card
+Descr: Table card for app UI
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.table-card {
+  .progress-bar {
+    --progress-bar-width: 100px;
+    --progress-bar-height: 6px;
+    --progress-bar-radius: 50em;
+    }
+}
+
+@include breakpoint(lg) {
+  .table-card {
+    .progress-bar {
+      --progress-bar-width: 180px;
+      }
+  }
+}

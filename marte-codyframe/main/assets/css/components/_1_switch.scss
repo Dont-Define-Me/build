@@ -1,0 +1,100 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_switch
+Title: Switch
+Descr: Custom ON/OFF checkbox toggle
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  // style
+  --switch-width: 64px;
+  --switch-height: 32px;
+  --switch-padding: 3px;
+
+  // animation
+  --switch-animation-duration: 0.2s;
+}
+
+.switch {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  position: relative;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  border-radius: 50em;
+  padding: var(--switch-padding) 0;
+}
+
+.switch__input, .switch__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.switch__input {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+
+  &:checked + .switch__label {
+    background-color: var(--color-primary);
+  }
+
+  &:checked + .switch__label + .switch__marker {
+    left: calc(100% - var(--switch-height) + var(--switch-padding));
+  }
+
+  &:focus + .switch__label,
+  &:active + .switch__label {
+    box-shadow: 0 0 0 2px alpha(var(--color-contrast-higher), 0.15);
+  }
+
+  &:checked:focus + .switch__label,
+  &:checked:active + .switch__label {
+    box-shadow: 0 0 0 2px alpha(var(--color-primary), 0.2);
+  }
+}
+
+.switch__label {
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: var(--color-bg-darker);
+  border-radius: inherit;
+  z-index: 1;
+  overflow: hidden;
+  transition: background var(--switch-animation-duration);
+}
+
+.switch__marker {
+  position: relative;
+  background-color: var(--color-white);
+  width: calc(var(--switch-height) - var(--switch-padding) * 2);
+  height: calc(var(--switch-height) - var(--switch-padding) * 2);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: var(--shadow-xs);
+  left: var(--switch-padding);
+  transition: left var(--switch-animation-duration);
+  will-change: left;
+}
+
+// dark mode switch
+.dark-mode-switch {
+  // style
+  --switch-width: 40px;
+  --switch-height: 20px;
+  --switch-padding: 2px;
+
+  // animation
+  --switch-animation-duration: 0.2s;
+}

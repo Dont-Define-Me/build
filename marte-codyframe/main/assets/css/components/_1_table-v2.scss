@@ -1,0 +1,57 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_table-v2
+Title: Table v2
+Descr: Basic table template
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.tbl {
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar { // custom scrollbar style
+    height: 8px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track { // progress bar
+    background-color: var(--color-contrast-lower);
+  }
+
+  &::-webkit-scrollbar-thumb { // handle
+    background-color: alpha(var(--color-contrast-higher), 0.9);
+    border-radius: 50em;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-contrast-higher);
+  }
+}
+
+.tbl__table {
+  width: 100%;
+}
+
+.tbl__body {
+  .tbl__row {
+    border-bottom: 1px solid var(--color-border-alpha);
+    transition: .2s;
+
+    &:hover {
+      background-color: alpha(var(--color-contrast-higher), 0.025);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.tbl__cell {
+  padding: var(--space-xs);
+}

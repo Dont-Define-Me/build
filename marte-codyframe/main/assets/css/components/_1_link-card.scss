@@ -1,0 +1,57 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_link-card
+Title: Link Card
+Descr: Link card for app UI
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-xs);
+  transition: .3s;
+
+  &:hover {
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.link-card__footer {
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+
+  > *:last-child {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.link-card:hover {
+  .link-card__footer {
+    > *:first-child {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    > *:last-child {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

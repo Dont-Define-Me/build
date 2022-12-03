@@ -1,0 +1,92 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_circular-progress-bar
+Title: Circular Progress Bar
+Descr: Display the current progress of a task using a circular SVG shape
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --c-progress-bar-size: 140px;
+  --c-progress-bar-stroke-width: 6; // max-value = 12
+}
+
+.c-progress-bar { 
+  width: var(--c-progress-bar-size);
+}
+
+html:not(.js) .c-progress-bar__shape { 
+  // if js is disabled, hide the svg circle -> show only the percentage value
+  display: none;
+}
+
+.c-progress-bar__shape {
+  width: 100%;
+  position: relative;
+
+  svg {
+    display: block;
+    width: var(--c-progress-bar-size);
+    height: var(--c-progress-bar-size);
+    stroke-width: var(--c-progress-bar-stroke-width);
+  }
+}
+
+.c-progress-bar__bg { // circle bg color
+  stroke: currentColor;
+  opacity: 0.125;
+}
+
+.c-progress-bar__fill { // circle fill/active color
+  stroke: currentColor;
+}
+
+.c-progress-bar__value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  i { // %
+    font-size: 0.65em;
+  }
+}
+
+.js .c-progress-bar:not(.c-progress-bar--init){
+  .c-progress-bar__fill, .c-progress-bar__value { 
+    // hide fill and value until the js has been initialized
+    visibility: hidden;
+  }
+}
+
+// --color-update
+// define color thresholds
+.c-progress-bar--color-update {
+  --c-progress-bar-color-1: 30; // if percentage is <= to this value, the color of the bar will the one defined in the  .c-progress-bar--fill-color-1 class
+  --c-progress-bar-color-2: 65; // if percentage is <= to this value, the color of the bar will the one defined in the  .c-progress-bar--fill-color-2 class
+  --c-progress-bar-color-3: 100; // if percentage is <= to this value, the color of the bar will the one defined in the  .c-progress-bar--fill-color-3 class
+
+  &.c-progress-bar--init .c-progress-bar__fill {
+    transition: stroke .2s;
+  }
+}
+
+.c-progress-bar--fill-color-1  {
+  .c-progress-bar__fill {
+    stroke: var(--color-error);
+  }
+}
+
+.c-progress-bar--fill-color-2 {
+  .c-progress-bar__fill {
+    stroke: var(--color-warning);
+  }
+}
+
+.c-progress-bar--fill-color-3 {
+  .c-progress-bar__fill {
+    stroke: var(--color-success);
+  }
+}

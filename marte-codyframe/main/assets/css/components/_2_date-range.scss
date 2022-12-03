@@ -1,0 +1,18 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _2_date-range
+Title: Date Range
+Descr: A controller for choosing date ranges
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.date-range, .date-range__wrapper {
+  position: relative;
+}
+
+.js .date-range__input { 
+  // hide input elements while initializing the date picker
+  display: none;
+}

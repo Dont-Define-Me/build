@@ -1,0 +1,15 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _3_stats-card
+Title: Statistics Card
+Descr: Statistics card for app UI
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.stats-card {
+  .chart--area {
+    --chart-height: 120px;
+  }
+}

@@ -1,0 +1,56 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_tabbed-navigation
+Title: Tabbed Navigation
+Descr: Tabbed secondary navigation
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --s-tabs-border-bottom-width: 1px;
+  --s-tabs-selected-item-border-bottom-width: 1px;
+}
+
+.s-tabs {
+  position: relative;
+}
+
+.s-tabs__list {
+  display: flex;
+  overflow: auto;
+  -webkit-overflow-scrolling: auto;
+
+  &::after { /* border bottom */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: var(--s-tabs-border-bottom-width);
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-contrast-lower);
+  }
+}
+
+.s-tabs__link {
+  color: var(--color-contrast-medium);
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  white-space: nowrap;
+  border-bottom: var(--s-tabs-selected-item-border-bottom-width) solid transparent;
+  z-index: 1;
+  transition: .2s;
+
+  &:hover:not(.s-tabs__link--current) {
+    color: var(--color-contrast-high);
+  }
+}
+
+.s-tabs__link--current {
+  position: relative;
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}

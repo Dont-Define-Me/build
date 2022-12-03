@@ -1,0 +1,21 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _2_settings-table
+Title: Settings Table
+Descr: A table containing a list of options that can be enabled/disabled
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.settings-tbl {
+  .switch {
+    // style
+    --switch-width: 48px;
+    --switch-height: 24px;
+    --switch-padding: 2px;
+
+    // animation
+    --switch-animation-duration: 0.2s;
+  }
+}

@@ -1,0 +1,74 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _3_column-chart
+Title: Column Chart
+Descr: Data visualisation using SVG Column Chart
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.chart--column {
+  --chart-height: 360px;
+  --chart-axis-stroke-width: 1px; // main x/y axis stroke width
+  --chart-guides-stroke-width: 1px; // chart grid guides stroke width
+  
+  // chart colors
+  .chart__set--1 {
+    --chart-data-color: var(--color-primary);
+  }
+
+  .chart__set--2 {
+    --chart-data-color: var(--color-contrast-high);
+  }
+
+  .chart__data-bar {
+    transition: opacity .2s;
+  }
+
+  .chart__data-bar--selected { // bar data hover effect
+    opacity: 0.8;
+  }
+
+  // tooltip
+  .chart__tooltip {
+    font-size: var(--text-sm);
+    box-shadow: var(--inner-glow), var(--shadow-md);
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+  }
+
+  // legend 
+  .chart__axis-legend { 
+    font-size: 0.6em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    fill: var(--color-contrast-medium); // text color
+  }
+
+  // label
+  .chart__axis-label { 
+    font-size: var(--text-xs);
+  }
+
+  // axis
+  .chart__axis {
+    stroke: var(--color-contrast-lower); // axis line color
+  }
+
+  .chart__axis--x {} // x-axis
+  .chart__axis-label--x {} // labels on x-axis
+  .chart__axis--y {} // y-axis
+  .chart__axis-label--y {} // labels on y-axis
+
+  // label indicators
+  .chart__tick { 
+    stroke: var(--color-contrast-lower);
+  }
+
+  // chart horizontal guides
+  .chart__guides {
+    stroke: var(--color-border-alpha);
+  }
+}

@@ -1,0 +1,85 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _3_area-chart
+Title: Area Chart
+Descr: Data visualisation using SVG Area Chart
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.chart--area {
+  --chart-height: 360px;
+  --chart-data-line-stroke-width: 2px; // chart stroke width
+  --chart-marker-size: 6px; // data marker - dot
+  --chart-axis-stroke-width: 1px; // main x/y axis stroke width
+  --chart-guides-stroke-width: 1px; // chart grid guides stroke width
+  --chart-data-fill-opacity: 0.15;
+
+  // line following the tooltip
+  --chart-y-indicator-dash: 3px; // dash length
+  --chart-y-indicator-stroke-width: 1px;
+  
+  // chart colors
+  .chart__set--1 {
+    --chart-data-color: var(--color-primary);
+  }
+
+  .chart__set--2 {
+    --chart-data-color: var(--color-accent);
+  }
+
+  // tooltip
+  .chart__tooltip {
+    font-size: var(--text-sm);
+    box-shadow: var(--inner-glow), var(--shadow-md);
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+  }
+
+  // y indicator following the tooltip
+  .chart__y-indicator {
+    stroke: var(--color-contrast-lower);
+  }
+
+  // legend 
+  .chart__axis-legend { 
+    font-size: 0.6em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    fill: var(--color-contrast-low); // text color
+  }
+
+  // label
+  .chart__axis-label { 
+    font-size: var(--text-xs);
+  }
+
+  // axis
+  .chart__axis {
+    stroke: var(--color-contrast-lower); // axis line color
+  }
+
+  .chart__axis--x {} // x-axis
+  .chart__axis-label--x {} // labels on x-axis
+  .chart__axis--y {} // y-axis
+  .chart__axis-label--y {} // labels on y-axis
+
+  // label indicators
+  .chart__tick { 
+    stroke: var(--color-contrast-lower);
+  }
+
+  // chart horizontal guides
+  .chart__guides {
+    stroke: var(--color-border-alpha);
+  }
+
+  // marker
+  .chart__marker {
+    fill: var(--chart-data-color);
+    stroke: var(--color-bg);
+    stroke-width: 2px;
+  }
+}

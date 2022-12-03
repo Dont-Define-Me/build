@@ -1,0 +1,52 @@
+@use '../base' as *;
+/* -------------------------------- 
+
+File#: _1_percentage-bar
+Title: Percentage Bar
+Descr: A bar graph used to display a percentage distribution
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --pct-bar-height: 10px;
+  --pct-bar-radius: 50em;
+  --pct-bar-gap: 3px; // gap among subdivisions
+
+  // legend dot
+  --pct-bar-legend-bullet-size: 10px; // height and width of legend dot indicator
+}
+
+.pct-bar__bg {
+  display: none;
+}
+
+.pct-bar__bullet {
+  display: block;
+  width: var(--pct-bar-legend-bullet-size);
+  height: var(--pct-bar-legend-bullet-size);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.js {
+  .pct-bar__bg {
+    display: flex;
+    height: var(--pct-bar-height);
+    border-radius: var(--pct-bar-radius);
+    overflow: hidden;
+  }
+
+  .pct-bar__fill {
+    height: 100%;
+    margin-right: var(--pct-bar-gap);
+
+    &:first-child {
+      border-radius: var(--pct-bar-radius) 0 0 var(--pct-bar-radius);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--pct-bar-radius) var(--pct-bar-radius) 0;
+      margin-right: 0;
+    }
+  }
+}
