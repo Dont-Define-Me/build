@@ -1,0 +1,1009 @@
+<section class="cr8-position-relative cr8-z-index-1 cr8-padding-y-xl">
+    <div class="cr8-container">
+  
+      <div class="cr8-grid cr8-gap-lg">
+        <div class="card-v13 cr8-col-4@md">
+        
+          <div class="cr8-text-center cr8-margin-top-sm">
+  <img class="bigger" src="https://imgur.com/wkLYkQP.png" alt="Image description" style="position:relative;right:20px">
+          </div>
+        </div>
+  
+        <div class="card-v13 cr8-col-4@md">
+  
+          <div class="cr8-text-center cr8-margin-top-sm">
+            <h3 class="cr8-text-md">
+              <a class="cr8-color-contrast-higher">Be in the know.</a>
+            </h3>
+  
+            <div class="card-v13__separator cr8-margin-x-auto cr8-margin-y-sm" role="presentation"></div>
+  
+            <p class="cr8-color-contrast-medium cr8-text-sm cr8-line-height-lg">Stay up to date with the latest information below.</p>
+        
+  
+          </div>
+        </div>
+  
+        <div class="card-v13 cr8-col-4@md">      
+          <div class="cr8-text-center cr8-margin-top-sm">
+   <img class="bigger bigger1" src="https://imgur.com/pVcZYbK.png" alt="Image description">
+          </div>
+        </div>
+      </div>
+    </div>
+              
+  </section>
+  <style>
+    .arrow-scroll{width:35px;margin-top:10px}.arrow-scroll>span{font-family:Arial,sans-serif;display:block;width:9px;height:9px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-right:2px solid rgba(78, 77, 77, 1)!important;border-bottom:2px solid rgba(78, 77, 77, 1)!important;margin:5px auto 3px;-webkit-animation:b 1s infinite;animation:b 1s infinite;-webkit-animation-delay:.2s;animation-delay:.2s}.arrow-scroll>span:first-child{-webkit-animation-delay:.1s;animation-delay:.1s}.arrow-scroll>span:last-child{-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes a{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(8px);transform:translateY(8px)}}@keyframes a{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(8px);transform:translateY(8px)}}@-webkit-keyframes b{0%{opacity:0}50%{opacity:.5}to{opacity:1}}@keyframes b{0%{opacity:0}50%{opacity:.5}to{opacity:1}}
+  
+  .rotate90 {
+    transform: rotate(-90deg);
+  }
+    </style>
+  <style>
+    /* -------------------------------- 
+  
+  File#: _2_card-v13
+  Title: Card v13
+  Descr: Container of information used as teaser for further content exploration
+  Usage: codyhouse.co/license
+  
+  -------------------------------- */
+  /* reset */
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  * {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: system-ui, sans-serif;
+    color: hsl(230, 7%, 23%);
+    font-size: 1rem;
+  }
+  
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: hsl(230, 13%, 9%);
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2.0736rem;
+  }
+  
+  h2 {
+    font-size: 1.728rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  ol, ul, menu {
+    list-style: none;
+  }
+  
+  button, input, textarea, select {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    appearance: none;
+  }
+  
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+  }
+  
+  a {
+    color: hsl(250, 84%, 54%);
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img, video, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  @media (min-width: 64rem) {
+    body {
+      font-size: 1.25rem;
+    }
+  
+    h1 {
+      font-size: 3.051rem;
+    }
+  
+      h2 {
+      font-size: 2.44rem;
+    }
+  
+      h3 {
+      font-size: 1.75rem;
+    }
+  
+      h4 {
+      font-size: 1.5625rem;
+    }
+  }
+  
+  /* variables */
+  :root {
+    /* colors */
+    --cr8-color-primary-hsl: 250, 84%, 54%;
+    --cr8-color-bg-hsl: 0, 0%, 100%;
+    --cr8-color-contrast-high-hsl: 230, 7%, 23%;
+    --cr8-color-contrast-higher-hsl: rgb(0,0,0,.8);
+    --cr8-color-contrast-medium-hsl: 225, 4%, 47%;
+  
+    /* spacing */
+    --cr8-space-xs: 0.5rem;
+    --cr8-space-sm: 0.75rem;
+    --cr8-space-md: 1.25rem;
+    --cr8-space-xl: 3.25rem;
+  
+    /* typography */
+    --cr8-text-md: 1.2rem;
+    --cr8-text-sm: 0.833rem;
+  }
+  
+  @media(min-width: 64rem){
+    :root {
+      /* spacing */
+      --cr8-space-xs: 0.75rem;
+      --cr8-space-sm: 1.125rem;
+      --cr8-space-md: 2rem;
+      --cr8-space-xl: 5.125rem;
+  
+      /* typography */
+      --cr8-text-md: 1.5625rem;
+      --cr8-text-sm: 1rem;
+    }
+  }
+  
+  /* icons */
+  .cr8-icon {
+    height: var(--cr8-size, 1em);
+    width: var(--cr8-size, 1em);
+    display: inline-block;
+    color: inherit;
+    fill: currentColor;
+    line-height: 1;
+    flex-shrink: 0;
+    max-width: initial;
+  }
+  
+  .cr8-icon--xs {
+    --cr8-size: 16px;
+  }
+  
+  /* component */
+  .card-v13 {
+    --transition-duration: .3s;
+  }
+  
+  .card-v13__figure-wrapper {
+    display: block;
+  }
+  
+  .card-v13__figure {
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: -webkit-clip-path var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: clip-path var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: clip-path var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-clip-path var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .card-v13__figure img {
+    display: block;
+    width: 100%;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    transition: -webkit-transform var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-filter var(--transition-duration);
+    transition: transform var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1), filter var(--transition-duration);
+    transition: transform var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1), filter var(--transition-duration), -webkit-transform var(--transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-filter var(--transition-duration);
+  }
+  .card-v13__figure-wrapper:hover .card-v13__figure {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .card-v13__figure-wrapper:hover .card-v13__figure img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  
+  .card-v13__separator {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: hsla(var(--cr8-color-contrast-higher-hsl), 0.1);
+  }
+  
+  /* utility classes */
+  .cr8-padding-x-md {
+    padding-left: var(--cr8-space-md);
+    padding-right: var(--cr8-space-md);
+  }
+  
+  .cr8-padding-y-xs {
+    padding-top: var(--cr8-space-xs);
+    padding-bottom: var(--cr8-space-xs);
+  }
+  
+  .cr8-text-sm {
+    font-size: var(--cr8-text-sm);
+  }
+  
+  .cr8-radius-md {
+    border-radius: 0.25em;
+  }
+  
+  .cr8-margin-top-sm {
+    margin-top: var(--cr8-space-sm);
+  }
+  
+  .cr8-line-height-lg {
+    line-height: 1.58;
+  }
+  
+  .cr8-color-contrast-medium {
+    --cr8-color-o: 1;
+    color: rgba(78, 77, 77, 1)!important;
+  text-shadow: 0px 2px 2px rgb(0 0 0 / 5%);
+  }
+  
+  .cr8-margin-y-sm {
+    margin-top: var(--cr8-space-sm);
+    margin-bottom: var(--cr8-space-sm);
+  }
+  
+  .cr8-margin-x-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cr8-color-contrast-higher {
+    --cr8-color-o: 1;
+    color: rgb(0,0,0,.8);
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 5%);
+  }
+  
+  .cr8-text-md {
+    font-size: var(--cr8-text-md);
+  }
+  
+  .cr8-text-center {
+    text-align: center;
+  }
+  
+  .cr8-gap-xl {
+    gap: var(--cr8-space-xl);
+  }
+  
+  .cr8-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .cr8-grid > * {
+    min-width: 0;
+    grid-column-end: span 12;
+  }
+  
+  .cr8-margin-bottom-xl {
+    margin-bottom: var(--cr8-space-xl);
+  }
+  
+  .cr8-max-width-adaptive-lg {
+    max-width: 32rem;
+  }
+  
+  @media(min-width: 48rem) {
+    .cr8-max-width-adaptive-lg {
+      max-width: 48rem;
+    }
+  }
+  
+  @media(min-width: 64rem) {
+    .cr8-max-width-adaptive-lg {
+      max-width: 64rem;
+    }
+  }
+  
+  @media(min-width: 80rem) {
+    .cr8-max-width-adaptive-lg {
+      max-width: 80rem;
+    }
+  }
+  
+  .cr8-container {
+    width: calc(100% - 2*var(--cr8-space-md));
+    //margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cr8-padding-y-xl {
+    padding-top: var(--cr8-space-xl);
+    padding-bottom: var(--cr8-space-xl);
+  }
+  
+  .cr8-z-index-1 {
+    z-index: 1;
+  }
+  
+  .cr8-position-relative {
+    position: relative;
+  }
+  
+  @media(min-width: 64rem){
+    .cr8-col-4\@md {
+      grid-column-end: span 4;
+    }
+  }
+    @media(min-width: 1024px){
+    .bigger {
+      max-width: 130%!important;
+    }
+      .bigger1 {
+        right: 120px;
+      position: relative;
+      }
+  }
+      @media(max-width: 1023px){
+  .cr8-gap-lg {
+      gap: 2.45rem;
+  }
+  </style>
+
+  <div class="cr8-margin-top-sm cr8-text-center mobilescreen" style="font-weight:900;">
+            <button class="btn-fx-3 cr8-radius-md cr8-text-sm">
+              <div class="btn-fx-3__inner">
+                <div class="cr8-text-center" style="">
+  <div class="arrow-scroll rotate90">    
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+              </div>
+            </button>
+          </div>
+<section class="container max-width-xxxl padding-y-sm">
+<div class="tab-features-v2 js-tabs" data-show-panel-class="tab-features-v2__panel--display" data-hide-panel-class="tab-features-v2__panel--hide">
+  <ul class="tab-features-v2__controls-list js-tabs__controls" aria-label="Tabs navigation">
+    <li>
+      <a href="#tab-features-1" class="tab-features-v2__control" aria-selected="true">
+        <span class="tab-features-v2__control-title">Hoodie Szn is Here!</span>
+        <span class="tab-features-v2__control-description">Preorder your hoodie today. Releases December 17th.</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#tab-features-2" class="tab-features-v2__control">
+        <span class="tab-features-v2__control-title">Spread the Word.</span>
+        <span class="tab-features-v2__control-description">Change a life by helping someone understand what Don't Define Me<sup>™</sup> is.</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#tab-features-3" class="tab-features-v2__control">
+        <span class="tab-features-v2__control-title">Six Years in the Making</span>
+        <span class="tab-features-v2__control-description">What started out as a small project has slowly turned into a global mission.</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#tab-features-4" class="tab-features-v2__control">
+        <span class="tab-features-v2__control-title">A Message from the Creator.</span>
+        <span class="tab-features-v2__control-description">Read a personal letter from John Pavek.</span>
+      </a>
+    </li>
+
+    <li class="tab-features-v2__text-crop-gradient" aria-hidden="true"></li>
+  </ul>
+
+<div class="cr8-margin-top-sm cr8-text-center mobilescreen" style="font-weight:900;">
+            <button class="btn-fx-3 cr8-radius-md cr8-text-sm">
+              <div class="btn-fx-3__inner">
+                <div class="cr8-text-center" style="">
+  <div class="arrow-scroll rotate90">    
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+              </div>
+            </button>
+          </div>
+  
+  <div class="tab-features-v2__panels js-tabs__panels">
+    <section id="tab-features-1" class="tab-features-v2__panel js-tabs__panel">
+      <img class="tab-features-v2__img" src="https://imgur.com/kqYwKSa.png" alt="Image description">
+    </section>
+
+    <section id="tab-features-2" class="tab-features-v2__panel js-tabs__panel">
+      <img class="tab-features-v2__img" src="https://imgur.com/W0yjWfE.jpg" alt="Image description">
+    </section>
+
+    <section id="tab-features-3" class="tab-features-v2__panel js-tabs__panel">
+      <img class="tab-features-v2__img" src="img/tabbed-features-v2-img-3.png" alt="Image description">
+    </section>
+
+    <section id="tab-features-4" class="tab-features-v2__panel js-tabs__panel">
+      <img class="tab-features-v2__img" src="img/tabbed-features-v2-img-4.png" alt="Image description">
+    </section>
+  </div>
+</div>
+</section>
+<style>
+  /* -------------------------------- 
+
+File#: _2_tabbed-features-v2
+Title: Tabbed Features v2
+Descr: A list of features filterable using a tabbed navigation
+Usage: codyhouse.co/license
+
+-------------------------------- */
+/* reset */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: system-ui, sans-serif;
+  color: hsl(230, 7%, 23%);
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: hsl(230, 13%, 9%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.0736rem;
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  background-color: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a {
+  color: hsl(250, 84%, 54%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 64rem) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  h1 {
+    font-size: 3.051rem;
+  }
+
+  h2 {
+    font-size: 2.44rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5625rem;
+  }
+}
+
+/* variables */
+:root {
+  /* colors */
+  --tz9-color-primary-hsl: 250, 84%, 54%;
+  --tz9-color-contrast-medium-hsl: 225, 4%, 47%;
+  --tz9-color-contrast-high-hsl: 230, 7%, 23%;
+  --tz9-color-contrast-higher-hsl: 230, 13%, 9%;
+  --tz9-color-bg-hsl: 0, 0%, 100%;
+  --tz9-color-bg-light-hsl: 0, 0%, 100%;
+  --tz9-color-black-hsl: 230, 13%, 9%;
+
+  /* spacing */
+  --tz9-space-xs: 0.5rem;
+  --tz9-space-sm: 0.75rem;
+  --tz9-space-md: 1.25rem;
+
+  /* typography */
+  --tz9-text-sm: 0.833rem;
+}
+
+@media(min-width: 64rem){
+  :root {
+    /* spacing */
+    --tz9-space-xs: 0.75rem;
+    --tz9-space-sm: 1.125rem;
+    --tz9-space-md: 2rem;
+
+    /* typography */
+    --tz9-text-sm: 1rem;
+  }
+}
+
+/* component */
+.tab-features-v2 {
+  display: grid;
+  gap: var(--tz9-space-md);
+}
+
+.tab-features-v2__controls-list {
+  position: relative;
+  display: flex;
+  gap: var(--tz9-space-xs);
+  overflow: auto;
+}
+
+.tab-features-v2__controls-list > * {
+  flex: 1 0 180px;
+}
+
+.tab-features-v2__text-crop-gradient {
+  /* gradient used to crop text */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  flex: 0 0 40px;
+  background: linear-gradient(to right, hsla(var(--tz9-color-bg-hsl), 0), hsla(var(--tz9-color-bg-hsl), 1));
+  pointer-events: none;
+}
+
+.tab-features-v2__control {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  padding: 0 0 var(--tz9-space-md);
+  border: 0px solid hsla(var(--tz9-color-contrast-higher-hsl), 0.1);
+  border-bottom-width: 1px;
+  transition: 0.2s;
+}
+
+.tab-features-v2__control-title {
+  display: block;
+  color: rgb(0,0,0,.8);
+  font-weight: 500;
+  margin-bottom: var(--tz9-space-xxs);
+  transition: color 0.2s;
+  text-shadow: 0px 2px 2px rgb(0 0 0 / 5%);
+}
+
+.tab-features-v2__control-description {
+  color:rgba(78, 77, 77, 1)!important;
+  line-height: 1.4;
+  font-size: var(--tz9-text-sm);
+  font-weight:lighter;
+}
+
+.tab-features-v2__control:hover {
+  border-color: hsla(var(--tz9-color-contrast-higher-hsl), 0.5);
+}
+
+.tab-features-v2__control:hover .tab-features-v2__control-title {
+  color: hsl(var(--tz9-color-contrast-higher-hsl));
+}
+
+.tab-features-v2__control[aria-selected=true] {
+  border-color: hsl(var(--tz9-color-primary-hsl));
+}
+
+.tab-features-v2__control[aria-selected=true] .tab-features-v2__control-title {
+  color: hsl(var(--tz9-color-primary-hsl));
+}
+
+.tab-features-v2__panels {
+  position: relative;
+}
+
+.tab-features-v2__panel {
+  opacity: 0;
+}
+
+.tabs--no-interaction .tab-features-v2__panel {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.tab-features-v2__panel--display {
+  -webkit-animation: tab-features-v2-panel-entry-anim 0.5s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          animation: tab-features-v2-panel-entry-anim 0.5s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.tab-features-v2__panel--hide {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  width: 100%;
+  transition: position 0s 0.5s, visibility 0s 0.5s;
+  -webkit-animation: tab-features-v2-panel-exit-anim 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: tab-features-v2-panel-exit-anim 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.tab-features-v2__img {
+  display: block;
+  width: 100%;
+  border-radius: 0.375em;
+}
+
+@-webkit-keyframes tab-features-v2-panel-entry-anim {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes tab-features-v2-panel-entry-anim {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes tab-features-v2-panel-exit-anim {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes tab-features-v2-panel-exit-anim {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@media (min-width: 64rem) {
+  .tab-features-v2 {
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tab-features-v2__controls-list {
+    flex-direction: column;
+    overflow: visible;
+  }
+  
+  .tab-features-v2__controls-list > * {
+    flex: 1 0 auto;
+  }
+
+  .tab-features-v2__text-crop-gradient {
+    display: none;
+  }
+
+  .tab-features-v2__control {
+    border-width: 0px;
+    border-radius: 0.375em;
+    padding: var(--tz9-space-sm) var(--tz9-space-md);
+  }
+
+  .tab-features-v2__control:hover, .tab-features-v2__control[aria-selected=true] {
+    background-color: hsl(var(--tz9-color-bg-light-hsl));
+    box-shadow: 0 0.3px 0.4px hsla(var(--tz9-color-black-hsl), 0.025),0 0.9px 1.5px hsla(var(--tz9-color-black-hsl), 0.05), 0 3.5px 6px hsla(var(--tz9-color-black-hsl), 0.1);
+  }
+}
+@media (min-width: 1023px) {
+  .mobilescreen {
+    display:none;
+  }
+</style>
+<script>
+// utility functions
+if(!Util) function Util () {};
+
+Util.addClass = function(el, className) {
+  var classList = className.split(' ');
+  el.classList.add(classList[0]);
+  if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+};
+
+Util.removeClass = function(el, className) {
+  var classList = className.split(' ');
+  el.classList.remove(classList[0]);
+  if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+};
+
+Util.toggleClass = function(el, className, bool) {
+  if(bool) Util.addClass(el, className);
+  else Util.removeClass(el, className);
+};
+
+Util.setAttributes = function(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+};
+
+Util.hasClass = function(el, className) {
+  return el.classList.contains(className);
+};
+
+Util.getChildrenByClassName = function(el, className) {
+  var children = el.children,
+    childrenByClass = [];
+  for (var i = 0; i < children.length; i++) {
+    if (Util.hasClass(children[i], className)) childrenByClass.push(children[i]);
+  }
+  return childrenByClass;
+};
+
+Util.getIndexInArray = function(array, el) {
+  return Array.prototype.indexOf.call(array, el);
+};
+
+
+// File#: _1_tabs
+// Usage: codyhouse.co/license
+(function() {
+	var Tab = function(element) {
+		this.element = element;
+		this.tabList = this.element.getElementsByClassName('js-tabs__controls')[0];
+		this.listItems = this.tabList.getElementsByTagName('li');
+		this.triggers = this.tabList.getElementsByTagName('a');
+		this.panelsList = this.element.getElementsByClassName('js-tabs__panels')[0];
+		this.panels = Util.getChildrenByClassName(this.panelsList, 'js-tabs__panel');
+		this.hideClass = this.element.getAttribute('data-hide-panel-class') ? this.element.getAttribute('data-hide-panel-class') : 'th8-hide';
+		this.customShowClass = this.element.getAttribute('data-show-panel-class') ? this.element.getAttribute('data-show-panel-class') : false;
+		this.layout = this.element.getAttribute('data-tabs-layout') ? this.element.getAttribute('data-tabs-layout') : 'horizontal';
+		// deep linking options
+		this.deepLinkOn = this.element.getAttribute('data-deep-link') == 'on';
+		// init tabs
+		this.initTab();
+	};
+
+	Tab.prototype.initTab = function() {
+		//set initial aria attributes
+		this.tabList.setAttribute('role', 'tablist');
+		Util.addClass(this.element, 'tabs--no-interaction');
+
+		for( var i = 0; i < this.triggers.length; i++) {
+			var bool = (i == 0),
+				panelId = this.panels[i].getAttribute('id');
+			this.listItems[i].setAttribute('role', 'presentation');
+			Util.setAttributes(this.triggers[i], {'role': 'tab', 'aria-selected': bool, 'aria-controls': panelId, 'id': 'tab-'+panelId});
+			Util.addClass(this.triggers[i], 'js-tabs__trigger'); 
+			Util.setAttributes(this.panels[i], {'role': 'tabpanel', 'aria-labelledby': 'tab-'+panelId});
+			Util.toggleClass(this.panels[i], this.hideClass, !bool);
+			if(bool && this.customShowClass) Util.addClass(this.panels[i], this.customShowClass);
+
+			if(!bool) this.triggers[i].setAttribute('tabindex', '-1'); 
+		}
+
+		//listen for Tab events
+		this.initTabEvents();
+
+		// check deep linking option
+		this.initDeepLink();
+	};
+
+	Tab.prototype.initTabEvents = function() {
+		var self = this;
+		//click on a new tab -> select content
+		this.tabList.addEventListener('click', function(event) {
+			if( event.target.closest('.js-tabs__trigger') ) self.triggerTab(event.target.closest('.js-tabs__trigger'), event);
+		});
+		//arrow keys to navigate through tabs 
+		this.tabList.addEventListener('keydown', function(event) {
+			;
+			if( !event.target.closest('.js-tabs__trigger') ) return;
+			if( tabNavigateNext(event, self.layout) ) {
+				event.preventDefault();
+				self.selectNewTab('next');
+			} else if( tabNavigatePrev(event, self.layout) ) {
+				event.preventDefault();
+				self.selectNewTab('prev');
+			}
+		});
+	};
+
+	Tab.prototype.selectNewTab = function(direction) {
+		var selectedTab = this.tabList.querySelector('[aria-selected="true"]'),
+			index = Util.getIndexInArray(this.triggers, selectedTab);
+		index = (direction == 'next') ? index + 1 : index - 1;
+		//make sure index is in the correct interval 
+		//-> from last element go to first using the right arrow, from first element go to last using the left arrow
+		if(index < 0) index = this.listItems.length - 1;
+		if(index >= this.listItems.length) index = 0;	
+		this.triggerTab(this.triggers[index]);
+		this.triggers[index].focus();
+	};
+
+	Tab.prototype.triggerTab = function(tabTrigger, event) {
+		var self = this;
+		event && event.preventDefault();	
+		var index = Util.getIndexInArray(this.triggers, tabTrigger);
+		//no need to do anything if tab was already selected
+		if(this.triggers[index].getAttribute('aria-selected') == 'true') return;
+
+		Util.removeClass(this.element, 'tabs--no-interaction');
+		
+		for( var i = 0; i < this.triggers.length; i++) {
+			var bool = (i == index);
+			Util.toggleClass(this.panels[i], this.hideClass, !bool);
+			if(this.customShowClass) Util.toggleClass(this.panels[i], this.customShowClass, bool);
+			this.triggers[i].setAttribute('aria-selected', bool);
+			bool ? this.triggers[i].setAttribute('tabindex', '0') : this.triggers[i].setAttribute('tabindex', '-1');
+		}
+
+		// update url if deepLink is on
+		if(this.deepLinkOn) {
+			history.replaceState(null, '', '#'+tabTrigger.getAttribute('aria-controls'));
+		}
+	};
+
+	Tab.prototype.initDeepLink = function() {
+		if(!this.deepLinkOn) return;
+		var hash = window.location.hash.substr(1);
+		var self = this;
+		if(!hash || hash == '') return;
+		for(var i = 0; i < this.panels.length; i++) {
+			if(this.panels[i].getAttribute('id') == hash) {
+				this.triggerTab(this.triggers[i], false);
+				setTimeout(function(){self.panels[i].scrollIntoView(true);});
+				break;
+			}
+		};
+	};
+
+	function tabNavigateNext(event, layout) {
+		if(layout == 'horizontal' && (event.keyCode && event.keyCode == 39 || event.key && event.key == 'ArrowRight')) {return true;}
+		else if(layout == 'vertical' && (event.keyCode && event.keyCode == 40 || event.key && event.key == 'ArrowDown')) {return true;}
+		else {return false;}
+	};
+
+	function tabNavigatePrev(event, layout) {
+		if(layout == 'horizontal' && (event.keyCode && event.keyCode == 37 || event.key && event.key == 'ArrowLeft')) {return true;}
+		else if(layout == 'vertical' && (event.keyCode && event.keyCode == 38 || event.key && event.key == 'ArrowUp')) {return true;}
+		else {return false;}
+	};
+
+	window.Tab = Tab;
+	
+	//initialize the Tab objects
+	var tabs = document.getElementsByClassName('js-tabs');
+	if( tabs.length > 0 ) {
+		for( var i = 0; i < tabs.length; i++) {
+			(function(i){new Tab(tabs[i]);})(i);
+		}
+	}
+}());
+</script>
+
+<div class="learnmore-header" style="z-index: 999999!important;">
+  <h4 style="text-transform:uppercase;font-size:1.5em!important;color: white!important;text-shadow: 0px 2px 2px rgb(255 255 255 / 25%);">Don't Define Me.<sup>™</sup></h4>
+</div>
+<style>
+  .learnmore-header {
+  position: fixed!important;
+    left: 50%;
+    top: 4%;
+    transform: translate(-50%, -50%);
+    white-space:nowrap;
+  }
+  .Main {
+    background-color: #FAF9F6!important;
+  }
+</style>
+<a class="goback-header homebtn" href="/" style="z-index: 999999!important;text-transform:uppercase;text-shadow: 0px 2px 2px rgb(255 255 255 / 25%);">home</a>
+
+
+<style>
+  .goback-header {
+  position: fixed!important;
+    left: 3%;
+    top: 4%;
+    transform: translate(-50%, -50%);
+    font-family: FuturaBold;
+    border: 0px solid rgb(255, 255, 255, 0.99);
+    border-radius: 30px;
+    padding: 0px 10px 0px 10px;
+    color: rgb(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255, 0.99);
+    font-size:.45em!important;
+}
+  .homebtn:hover {
+    background-color: rgb(255, 255, 255, 0.99);
+    color: rgb(0, 0, 0, .8);
+    border: 1.5px solid transparent;
+    font-size:.465em!important;
+    cursor: pointer;
+  }
+</style>
