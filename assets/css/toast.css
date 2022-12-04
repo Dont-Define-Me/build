@@ -1,0 +1,114 @@
+/* -------------------------------- 
+
+File#: _1_toast
+Title: Toast
+Descr: Notification message
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+    --toast-width: 400px;
+    --toast-gap: var(--space-xs);
+    --toast-transition-duration: .3s;
+  }
+  
+  /* element created in JS - used to wrap toasts with same position (e.g., top-right) */
+  .toast-wrapper {
+    width: var(--toast-width);
+    max-width: 80%;
+    padding: var(--space-sm);
+    z-index: var(--z-index-fixed-element);
+    pointer-events: none;
+  }
+  
+  .toast {
+    background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.98);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: fixed;
+    pointer-events: auto;
+    will-change: transform;
+    transition: opacity var(--toast-transition-duration), visibility 0s, -webkit-transform var(--toast-transition-duration) var(--ease-out);
+    transition: opacity var(--toast-transition-duration), visibility 0s, transform var(--toast-transition-duration) var(--ease-out);
+    transition: opacity var(--toast-transition-duration), visibility 0s, transform var(--toast-transition-duration) var(--ease-out), -webkit-transform var(--toast-transition-duration) var(--ease-out);
+  }
+  
+  .toast--hidden {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    transition: opacity var(--toast-transition-duration), visibility 0s var(--toast-transition-duration), -webkit-transform var(--toast-transition-duration) var(--ease-out);
+    transition: opacity var(--toast-transition-duration), visibility 0s var(--toast-transition-duration), transform var(--toast-transition-duration) var(--ease-out);
+    transition: opacity var(--toast-transition-duration), visibility 0s var(--toast-transition-duration), transform var(--toast-transition-duration) var(--ease-out), -webkit-transform var(--toast-transition-duration) var(--ease-out);
+  }
+  
+  .toast--top-right,
+  .toast--top-center,
+  .toast--top-left {
+    margin-bottom: var(--toast-gap);
+  }
+  
+  .toast--bottom-right,
+  .toast--bottom-center,
+  .toast--bottom-left {
+    margin-top: var(--toast-gap);
+  }
+  
+  .toast__title, .toast__p {
+    color: var(--color-bg);
+  }
+  
+  .toast__p {
+    opacity: 0.6;
+  }
+  
+  .toast__close-btn {
+    --size: 24px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.15);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .toast__close-btn .icon {
+    --size: 12px;
+    margin: auto;
+    color: var(--color-bg);
+  }
+  .toast__close-btn:hover {
+    background-color: hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.1);
+  }
+  
+  .toast__icon-wrapper {
+    --size: 32px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+  .toast__icon-wrapper .icon {
+    --size: 16px;
+    margin: auto;
+  }
+  
+  .toast__icon-wrapper--warning {
+    background-color: hsla(var(--color-warning-h), var(--color-warning-s), var(--color-warning-l), 0.2);
+  }
+  .toast__icon-wrapper--warning .icon {
+    color: var(--color-warning);
+  }
+  
+  .toast__icon-wrapper--success {
+    background-color: hsla(var(--color-success-h), var(--color-success-s), var(--color-success-l), 0.2);
+  }
+  .toast__icon-wrapper--success .icon {
+    color: var(--color-success);
+  }
