@@ -992,105 +992,546 @@ function resetFocusTabsStyle() {
 <!-- End of Squarespace Headers -->
   </head>
 
-
-
-
-  <script>
-    var toasts = document.querySelectorAll('.js-toast'),
-      trigger = document.querySelector('button'),
-      index = 0;
-  
-    var openToastEvent = new CustomEvent('openToast');
-  
-    trigger.addEventListener('click', function(event){
-      if(index >= toasts.length) index = 0;
-      toasts[index].dispatchEvent(openToastEvent);
-      index = index + 1;
-    });
-  </script>
-
-
-
-
-
 <section class="position-relative">
-    <p class="color-contrast-medium margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p>
-
-<button class="btn btn--primary" aria-controls="toast-1">Show Toast</button>
-
-<div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-1">
-  <div class="flex items-start justify-between">
-    <div class="text-component text-sm">
-      <h1 class="toast__title text-md">Title One</h1>
-      <p class="toast__p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus iusto ut, error aspernatur quaerat corrupti ipsum deleniti ratione.</p>
-    </div>
-  
-    <button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus">
-      <svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-    </button>
-  </div>
-</div>
-
-<div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-2">
-  <div class="flex items-start justify-between">
-    <div class="toast__icon-wrapper toast__icon-wrapper--warning margin-right-xs">
-      <svg class="icon" viewBox="0 0 16 16"><title>Alert</title><path d="M15.8,12.526,9.483.88A1.668,1.668,0,0,0,8.8.2,1.693,1.693,0,0,0,6.516.88L.2,12.526A1.678,1.678,0,0,0,1.686,15H14.314a1.7,1.7,0,0,0,.8-.2,1.673,1.673,0,0,0,.687-2.274ZM8,13a1,1,0,1,1,1-1A1,1,0,0,1,8,13ZM9,9.5a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,7,9.5v-4A.5.5,0,0,1,7.5,5h1a.5.5,0,0,1,.5.5Z"></path></g></svg>
-    </div>
-
-    <div class="text-component text-sm">
-      <h1 class="toast__title text-md">Title Two</h1>
-      <p class="toast__p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-  
-    <button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus">
-      <svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-    </button>
-  </div>
-</div>
-
-<div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-3">
-  <header class="flex items-center justify-between border-bottom border-bg border-opacity-20% padding-bottom-xs margin-bottom-xs">
-    <h1 class="toast__title text-base text-truncate">Title Three</h1>
-
-    <button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus">
-      <svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-    </button>
-  </header>
-
-  <p class="toast__p text-sm line-height-md">Lorem ipsum dolor sit amet consectetur.</p>
-</div>
-
-<div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-4">
-  <div class="flex items-start justify-between">
-    <div>
-      <div class="text-component text-sm">
-        <h1 class="toast__title text-md">Title Four</h1>
-        <p class="toast__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, delectus.</p>
+    <div class="ticker js-ticker">
+        <ul class="ticker__list">
+          <li class="ticker__item">
+            <span>Rich in important nutrients</span>
+          </li>
+      
+          <li class="ticker__item">
+            <span>High in protein</span>
+          </li>
+      
+          <li class="ticker__item">
+            <span>It may benefit digestive health</span>
+          </li>
+      
+          <li class="ticker__item">
+            <span>Immune support and vitality</span>
+          </li>
+      
+          <li class="ticker__item">
+            <span>Protection for bones and teeth</span>
+          </li>
+      
+          <li class="ticker__item">
+            <span>Tasty</span>
+          </li>
+        </ul>
       </div>
-
-      <a class="btn btn--primary btn--sm width-100% margin-top-xs" href="#0">Button</a>
-    </div>
-  
-    <button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus">
-      <svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-    </button>
-  </div>
-</div>
-
-<div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-5">
-  <div class="flex items-start justify-between">
-    <div class="toast__icon-wrapper toast__icon-wrapper--success margin-right-xs">
-      <svg class="icon" viewBox="0 0 16 16"><title>Success</title><g><path d="M6,15a1,1,0,0,1-.707-.293l-5-5A1,1,0,1,1,1.707,8.293L5.86,12.445,14.178.431a1,1,0,1,1,1.644,1.138l-9,13A1,1,0,0,1,6.09,15C6.06,15,6.03,15,6,15Z"></path></g></svg>
-    </div>
-
-    <div class="text-component text-sm">
-      <h1 class="toast__title text-md">Title Five</h1>
-      <p class="toast__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo esse maiores assumenda.</p>
-    </div>
-  
-    <button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus">
-      <svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-    </button>
-  </div>
-</div>
 </section>
+
+<style>
+    /* -------------------------------- 
+
+File#: _1_ticker
+Title: Ticker
+Descr: News-like Horizontal Scrolling List
+Usage: codyhouse.co/license
+
+-------------------------------- */
+/* reset */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: system-ui, sans-serif;
+  color: hsl(230, 7%, 23%);
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: hsl(230, 13%, 9%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.0736rem;
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  background-color: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a {
+  color: hsl(250, 84%, 54%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 64rem) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  h1 {
+    font-size: 3.051rem;
+  }
+
+    h2 {
+    font-size: 2.44rem;
+  }
+
+    h3 {
+    font-size: 1.75rem;
+  }
+
+    h4 {
+    font-size: 1.5625rem;
+  }
+}
+
+/* variables */
+:root {
+  /* colors */
+  --tt9-color-primary-hsl: 250, 84%, 54%;
+  --tt9-color-bg-hsl: 0, 0%, 100%;
+  --tt9-color-contrast-high-hsl: 230, 7%, 23%;
+  --tt9-color-contrast-higher-hsl: 230, 13%, 9%;
+  --tt9-color-contrast-low-hsl: 240, 4%, 65%;
+
+  /* spacing */
+  --tt9-space-md: 1.25rem;
+  --tt9-space-lg: 2rem;
+}
+
+@media(min-width: 64rem){
+  :root {
+    /* spacing */
+    --tt9-space-md: 2rem;
+    --tt9-space-lg: 3.125rem;
+  }
+}
+
+/* component */
+:root {
+  --ticker-animation-duration: 10s;
+  --ticker-gap-x: var(--tt9-space-md);
+  /* horizontal gap */
+  --ticker-img-width: 280px;
+}
+@media (min-width: 48rem) {
+  :root {
+    --ticker-img-width: 400px;
+  }
+}
+@media (min-width: 64rem) {
+  :root {
+    --ticker-img-width: 550px;
+  }
+}
+
+.ticker {
+  overflow: hidden;
+}
+
+.ticker__list {
+  display: flex;
+  overflow: auto;
+  will-change: transform;
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/* class added in JS to trigger the scrolling animation */
+.ticker--animate .ticker__list {
+  -webkit-animation: ticker-animation var(--ticker-animation-duration) infinite;
+          animation: ticker-animation var(--ticker-animation-duration) infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+/* pause animation on hover or using an external control button */
+.ticker[data-ticker-pause-hover=on] .ticker__list:hover,
+.ticker--paused .ticker__list {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.ticker__item {
+  flex-shrink: 0;
+  margin-right: calc(var(--ticker-gap-x) / 2);
+  margin-left: calc(var(--ticker-gap-x) / 2);
+}
+
+.ticker__img {
+  display: block;
+  width: var(--ticker-img-width);
+}
+
+.ticker-control {
+  /* pause/play button */
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  background-color: hsla(var(--tt9-color-contrast-higher-hsl), 0.75);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.ticker-control i {
+  /* icon */
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  color: hsl(var(--tt9-color-bg-hsl));
+  /* icon color */
+}
+.ticker-control i::before, .ticker-control i::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: -webkit-clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.ticker-control i::before {
+  -webkit-clip-path: polygon(1px 1px, 5px 1px, 5px calc(100% - 1px), 1px calc(100% - 1px));
+          clip-path: polygon(1px 1px, 5px 1px, 5px calc(100% - 1px), 1px calc(100% - 1px));
+}
+.ticker-control i::after {
+  -webkit-clip-path: polygon(calc(100% - 5px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+          clip-path: polygon(calc(100% - 5px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+}
+.ticker-control:hover {
+  cursor: pointer;
+  background-color: hsla(var(--tt9-color-contrast-higher-hsl), 0.95);
+}
+.ticker-control[aria-pressed=true] i::before {
+  -webkit-clip-path: polygon(2px 0%, 100% 50%, 100% 50%, 2px 100%);
+          clip-path: polygon(2px 0%, 100% 50%, 100% 50%, 2px 100%);
+}
+.ticker-control[aria-pressed=true] i::after {
+  -webkit-clip-path: polygon(calc(100% - 5px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+          clip-path: polygon(calc(100% - 5px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+}
+
+/* ticker--anim-off class turns off translate animation - added in JS if reduced-motion option is on */
+.ticker:not(.ticker--anim-off) .ticker__list {
+  overflow: visible;
+}
+
+.ticker--reverse:not(.ticker--anim-off) .ticker__list {
+  flex-direction: row-reverse;
+}
+
+.ticker--reverse.ticker--animate:not(.ticker--anim-off) .ticker__list {
+  -webkit-transform: translateX(calc(100vw - 100%));
+          transform: translateX(calc(100vw - 100%));
+  -webkit-animation-name: ticker-animation-reverse;
+          animation-name: ticker-animation-reverse;
+}
+
+/* intermediate steps are added to fix a bug on Safari */
+@-webkit-keyframes ticker-animation {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@keyframes ticker-animation {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@-webkit-keyframes ticker-animation-reverse {
+  0% {
+    -webkit-transform: translateX(calc(100vw - 100%));
+            transform: translateX(calc(100vw - 100%));
+  }
+  100% {
+    -webkit-transform: translateX(calc(100vw - 50%));
+            transform: translateX(calc(100vw - 50%));
+  }
+}
+@keyframes ticker-animation-reverse {
+  0% {
+    -webkit-transform: translateX(calc(100vw - 100%));
+            transform: translateX(calc(100vw - 100%));
+  }
+  100% {
+    -webkit-transform: translateX(calc(100vw - 50%));
+            transform: translateX(calc(100vw - 50%));
+  }
+}
+
+/* utility classes */
+.tt9-items-center {
+  align-items: center;
+}
+
+.tt9-margin-bottom-md {
+  margin-bottom: var(--tt9-space-md);
+}
+
+.tt9-text-right {
+  text-align: right;
+}
+
+.tt9-max-width-lg {
+  max-width: 80rem;
+}
+
+.tt9-container {
+  width: calc(100% - 2*var(--tt9-space-md));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tt9-color-contrast-low {
+  --tt9-color-o: 1;
+  color: hsla(var(--tt9-color-contrast-low-hsl), var(--tt9-color-o, 1));
+}
+
+.tt9-fill-current {
+  fill: currentColor;
+}
+
+.tt9-hide {
+  display: none !important;
+}
+</style>
+
+<script>
+    // utility functions
+if(!Util) function Util () {};
+
+Util.addClass = function(el, className) {
+  var classList = className.split(' ');
+  el.classList.add(classList[0]);
+  if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+};
+
+Util.removeClass = function(el, className) {
+  var classList = className.split(' ');
+  el.classList.remove(classList[0]);
+  if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+};
+
+Util.osHasReducedMotion = function() {
+  if(!window.matchMedia) return false;
+  var matchMediaObj = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(matchMediaObj) return matchMediaObj.matches;
+  return false; 
+};
+
+// File#: _1_ticker
+// Usage: codyhouse.co/license
+(function() {
+  var Ticker = function(element) {
+    this.element = element;
+    this.list = this.element.getElementsByTagName('ul')[0];
+    this.items = this.list.children;
+    this.paused = false;
+    // clones info
+    this.clones = this.list.innerHTML;
+    this.clonesNumber = 1;
+    this.itemsLength = this.items.length;
+    // animation duration
+    this.animationDuration = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ticker-animation-duration'));
+    initTicker(this);
+  };
+
+  function initTicker(ticker) {
+    // clone ticker children
+    setTickerWidth(ticker);
+    cloneItems(ticker);
+    initAnimation(ticker);
+
+    // resize/font loaded event
+    ticker.element.addEventListener('update-ticker', function(event){
+      setTickerWidth(ticker);
+      cloneItems(ticker);
+    });
+
+    // click on control button events
+    ticker.element.addEventListener('anim-ticker', function(event){
+      ticker.paused = false;
+      Util.removeClass(ticker.element, 'ticker--paused');
+    });
+
+    ticker.element.addEventListener('pause-ticker', function(event){
+      ticker.paused = true;
+      Util.addClass(ticker.element, 'ticker--paused');
+    });
+
+    // all set
+    Util.addClass(ticker.element, 'ticker--loaded');
+  };
+
+  function setTickerWidth(ticker) {
+    var width = 0;
+    for(var i = 0; i < ticker.itemsLength; i++) {
+      width = width + getItemWidth(ticker.items[i]);
+    }
+    // check if we need to update the number of clones
+    if(width < window.innerWidth) {
+      ticker.clonesNumber = Math.ceil(window.innerWidth/width) * 2 - 1;
+    } else {
+      ticker.clonesNumber = 1;
+    }
+
+    // update list width
+    ticker.list.style.width = ((ticker.clonesNumber + 1)*width)+'px';
+  };
+
+  function getItemWidth(item) {
+    var style = window.getComputedStyle(item);
+    return parseFloat(style.marginRight) + parseFloat(style.marginLeft) + item.offsetWidth;
+  };
+
+  function cloneItems(ticker) {
+    ticker.list.innerHTML = ticker.clones;
+    for(var i = 0; i < ticker.clonesNumber; i++) {
+      ticker.list.insertAdjacentHTML('beforeend', ticker.clones);
+    }
+    // update animation duration
+    ticker.element.style.setProperty('--ticker-animation-duration', ticker.animationDuration*(ticker.clonesNumber+1)+'s');
+  };
+
+  function initAnimation(ticker) {
+    // init observer - animate ticker only when in viewport
+    var observer = new IntersectionObserver(tickerObserve.bind(ticker));
+    observer.observe(ticker.element);
+    
+  };
+
+  function tickerObserve(entries) {
+    if(entries[0].isIntersecting) {
+      if(!this.paused) Util.addClass(this.element, 'ticker--animate');
+    } else {
+      Util.removeClass(this.element, 'ticker--animate');
+    }
+  };
+
+  function initTickerController(controller) {
+    // play/pause btn controller
+    var tickerContainer = document.getElementById(controller.getAttribute('aria-controls'));
+    if(!tickerContainer) return;
+    var tickerList = tickerContainer.getElementsByClassName('js-ticker');
+    if(tickerList.length < 1) tickerList = [tickerContainer];
+    // detect click
+    controller.addEventListener('click', function(event){
+      var playAnimation = controller.getAttribute('aria-pressed') == 'true';
+      var animEvent = playAnimation ? 'anim-ticker' : 'pause-ticker';
+      playAnimation ? controller.setAttribute('aria-pressed', 'false') : controller.setAttribute('aria-pressed', 'true');
+      for(var i = 0; i < tickerList.length; i++) {
+        tickerList[i].dispatchEvent(new CustomEvent(animEvent));
+      }
+    });
+  };
+
+  //initialize the Ticker objects
+  var tickers = document.getElementsByClassName('js-ticker'),
+    requestAnimationFrameSupported = window.requestAnimationFrame,
+    reducedMotion = Util.osHasReducedMotion(),
+    intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype);
+
+	if( tickers.length > 0 ) {
+    var tickersArray = [];
+		for( var i = 0; i < tickers.length; i++) {
+      if(!requestAnimationFrameSupported || reducedMotion || !intersectionObserverSupported) {
+        // animation is off if requestAnimationFrame/IntersectionObserver is not supported or reduced motion is on
+        Util.addClass(tickers[i], 'ticker--anim-off');
+      } else {(function(i){tickersArray.push(new Ticker(tickers[i]));})(i);}
+    }
+
+    if(tickersArray.length > 0) {
+      var resizingId = false,
+        customEvent = new CustomEvent('update-ticker');
+      
+      // on resize -> update ticker width 
+      window.addEventListener('resize', function() {
+        clearTimeout(resizingId);
+        resizingId = setTimeout(doneResizing, 500);
+      });
+
+      // wait for font to be loaded -> update ticker width
+      if(document.fonts) {
+        document.fonts.onloadingdone = function (fontFaceSetEvent) {
+          doneResizing();
+        };
+      }
+
+      function doneResizing() {
+        for( var i = 0; i < tickersArray.length; i++) {
+          (function(i){tickersArray[i].element.dispatchEvent(customEvent)})(i);
+        };
+      };
+
+      // ticker play/pause buttons
+      var tickerControl = document.getElementsByClassName('js-ticker-control');
+      if(tickerControl.length > 0) {
+        for( var i = 0; i < tickerControl.length; i++) {
+          if(!requestAnimationFrameSupported || reducedMotion || !intersectionObserverSupported) {
+            Util.addClass(tickerControl[i], 'tt9-hide');
+          } else {
+            (function(i){initTickerController(tickerControl[i]);})(i);
+          } 
+        }
+      }
+    };
+  }
+}());
+</script>
