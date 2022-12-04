@@ -3885,7 +3885,7 @@ function choosePic(){
 </script>
                     </div>
               
-                <a class="category-block unavailable" aria-controls="toast-1">
+                <a class="category-block" aria-controls="toast-1">
                     <div class="grid1-header">
                         <h3>Find a shirt</h3>
                     </div>
@@ -3897,17 +3897,11 @@ function choosePic(){
                 </a>
                 
                 <script>
-                  var toasts = document.querySelectorAll('.js-toast'),
-                    trigger = document.querySelector('unavailable'),
-                    index = 0;
-                
-                  var openToastEvent = new CustomEvent('openToast');
-                
-                  trigger.addEventListener('click', function(event){
-                    if(index >= toasts.length) index = 0;
-                    toasts[index].dispatchEvent(openToastEvent);
-                    index = index + 1;
-                  });
+var toast = document.querySelector('.js-toast'), // toast element
+  openToastEvent = new CustomEvent('openToast'); // custom event
+
+// open toast
+toast.dispatchEvent(openToastEvent);
                 </script>
                 
                 <a class="category-block" style="" href="/creation">
