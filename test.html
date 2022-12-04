@@ -10,87 +10,46 @@
 <link rel="stylesheet" href="https://unpkg.com/codyhouse-framework/main/assets/css/style.min.css">
 </head>
 
-<body>
-<section>
-    <p class="ta1-color-contrast-medium ta1-margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p>
-
-    <button class="ta1-btn ta1-btn--primary" aria-controls="toast-1">Show Toast</button>
+<html lang="en" class=" js"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
     
-    <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-1">
-      <div class="ta1-flex ta1-items-start ta1-justify-between">
-        <div class="ta1-text-component ta1-text-sm">
-          <h1 class="toast__title ta1-text-md">Title One</h1>
-          <p class="toast__p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus iusto ut, error aspernatur quaerat corrupti ipsum deleniti ratione.</p>
-        </div>
-      
-        <button class="toast__close-btn ta1-margin-left-4xs js-toast__close-btn js-tab-focus">
-          <svg class="ta1-icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-        </button>
-      </div>
+    <script>
+        if(window.location !== window.parent.location) {
+          document.write('<link id="cd-base-part-1" rel="stylesheet" href="../../assets/css/base-part-1.css?v=7000">');
+        } else {
+          document.write('<link id="cd-base-part-1" rel="stylesheet" href="../../../codyhouse-framework/main/assets/css/style.css">');
+        }
+      </script><link id="cd-base-part-1" rel="stylesheet" href="../../../codyhouse-framework/main/assets/css/style.css">
+    <noscript>
+        <link id="cd-base-part-1" rel="stylesheet" href="../../assets/css/base-part-1.css">
+      </noscript>
+    
+    <link id="codyframe" rel="stylesheet" href="../source/toast/dist/toast.css?v=7000">
+    
+    <link rel="stylesheet" href="../../assets/css/app-demo.css">
+    </head>
+    <body cz-shortcut-listen="true">
+    <div class="container max-width-xs padding-y-xl js-cd-demo">
+    
+    <p class="color-contrast-medium margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p><button class="btn btn--primary" aria-controls="toast-1">Show Toast</button><div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-2"><div class="flex items-start justify-between"><div class="toast__icon-wrapper toast__icon-wrapper--warning margin-right-xs"><svg class="icon" viewBox="0 0 16 16"><title>Alert</title><path d="M15.8,12.526,9.483.88A1.668,1.668,0,0,0,8.8.2,1.693,1.693,0,0,0,6.516.88L.2,12.526A1.678,1.678,0,0,0,1.686,15H14.314a1.7,1.7,0,0,0,.8-.2,1.673,1.673,0,0,0,.687-2.274ZM8,13a1,1,0,1,1,1-1A1,1,0,0,1,8,13ZM9,9.5a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,7,9.5v-4A.5.5,0,0,1,7.5,5h1a.5.5,0,0,1,.5.5Z"></path></svg></div><div class="text-component text-sm"><h1 class="toast__title text-md">Title Two</h1><p class="toast__p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p></div><button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus" style="outline: none;"><svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11"></line><line x1="11" y1="1" x2="1" y2="11"></line></g></svg></button></div></div><div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-3"><header class="flex items-center justify-between border-bottom border-bg border-opacity-20% padding-bottom-xs margin-bottom-xs"><h1 class="toast__title text-base text-truncate">Title Three</h1><button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus" style="outline: none;"><svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11"></line><line x1="11" y1="1" x2="1" y2="11"></line></g></svg></button></header><p class="toast__p text-sm line-height-md">Lorem ipsum dolor sit amet consectetur.</p></div><div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-4"><div class="flex items-start justify-between"><div><div class="text-component text-sm"><h1 class="toast__title text-md">Title Four</h1><p class="toast__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, delectus.</p></div><a class="btn btn--primary btn--sm width-100% margin-top-xs" href="#0">Button</a></div><button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus" style="outline: none;"><svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11"></line><line x1="11" y1="1" x2="1" y2="11"></line></g></svg></button></div></div><div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-5"><div class="flex items-start justify-between"><div class="toast__icon-wrapper toast__icon-wrapper--success margin-right-xs"><svg class="icon" viewBox="0 0 16 16"><title>Success</title><g><path d="M6,15a1,1,0,0,1-.707-.293l-5-5A1,1,0,1,1,1.707,8.293L5.86,12.445,14.178.431a1,1,0,1,1,1.644,1.138l-9,13A1,1,0,0,1,6.09,15C6.06,15,6.03,15,6,15Z"></path></g></svg></div><div class="text-component text-sm"><h1 class="toast__title text-md">Title Five</h1><p class="toast__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo esse maiores assumenda.</p></div><button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus" style="outline: none;"><svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11"></line><line x1="11" y1="1" x2="1" y2="11"></line></g></svg></button></div></div>
     </div>
     
-    <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-2">
-      <div class="ta1-flex ta1-items-start ta1-justify-between">
-        <div class="toast__icon-wrapper toast__icon-wrapper--warning ta1-margin-right-xs">
-          <svg class="ta1-icon" viewBox="0 0 16 16"><title>Alert</title><path d="M15.8,12.526,9.483.88A1.668,1.668,0,0,0,8.8.2,1.693,1.693,0,0,0,6.516.88L.2,12.526A1.678,1.678,0,0,0,1.686,15H14.314a1.7,1.7,0,0,0,.8-.2,1.673,1.673,0,0,0,.687-2.274ZM8,13a1,1,0,1,1,1-1A1,1,0,0,1,8,13ZM9,9.5a.5.5,0,0,1-.5.5h-1A.5.5,0,0,1,7,9.5v-4A.5.5,0,0,1,7.5,5h1a.5.5,0,0,1,.5.5Z"></path></g></svg>
-        </div>
+    <script src="/assets/js/toast.js"></script><div class="toast-wrapper position-fixed flex top-0 right-0 flex-column" id="toast-wrapper-top-right"></div><div class="toast-wrapper position-fixed flex top-0 left-0 flex-column" id="toast-wrapper-top-left"></div><div class="toast-wrapper position-fixed flex top-0 left-50% -translate-x-50% flex-column items-center" id="toast-wrapper-top-center"></div><div class="toast-wrapper position-fixed flex bottom-0 right-0 flex-column-reverse" id="toast-wrapper-bottom-right"></div><div class="toast-wrapper position-fixed flex bottom-0 left-0 flex-column-reverse" id="toast-wrapper-bottom-left"></div><div class="toast-wrapper position-fixed flex bottom-0 left-50% -translate-x-50% flex-column-reverse items-center" id="toast-wrapper-bottom-center"></div>
     
-        <div class="ta1-text-component ta1-text-sm">
-          <h1 class="toast__title ta1-text-md">Title Two</h1>
-          <p class="toast__p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      
-        <button class="toast__close-btn ta1-margin-left-4xs js-toast__close-btn js-tab-focus">
-          <svg class="ta1-icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-        </button>
-      </div>
-    </div>
+    <script>
+      var toasts = document.querySelectorAll('.js-toast'),
+        trigger = document.querySelector('button'),
+        index = 0;
     
-    <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-3">
-      <header class="ta1-flex ta1-items-center ta1-justify-between ta1-border-bottom ta1-border-bg ta1-border-opacity-20% ta1-padding-bottom-xs ta1-margin-bottom-xs">
-        <h1 class="toast__title ta1-text-base ta1-text-truncate">Title Three</h1>
+      var openToastEvent = new CustomEvent('openToast');
     
-        <button class="toast__close-btn ta1-margin-left-4xs js-toast__close-btn js-tab-focus">
-          <svg class="ta1-icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-        </button>
-      </header>
+      trigger.addEventListener('click', function(event){
+        if(index >= toasts.length) index = 0;
+        toasts[index].dispatchEvent(openToastEvent);
+        index = index + 1;
+      });
+    </script>
     
-      <p class="toast__p ta1-text-sm ta1-line-height-md">Lorem ipsum dolor sit amet consectetur.</p>
-    </div>
-    
-    <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-4">
-      <div class="ta1-flex ta1-items-start ta1-justify-between">
-        <div>
-          <div class="ta1-text-component ta1-text-sm">
-            <h1 class="toast__title ta1-text-md">Title Four</h1>
-            <p class="toast__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, delectus.</p>
-          </div>
-    
-          <a class="ta1-btn ta1-btn--primary ta1-btn--sm ta1-width-100% ta1-margin-top-xs" href="#0">Button</a>
-        </div>
-      
-        <button class="toast__close-btn ta1-margin-left-4xs js-toast__close-btn js-tab-focus">
-          <svg class="ta1-icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-        </button>
-      </div>
-    </div>
-    
-    <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-5">
-      <div class="ta1-flex ta1-items-start ta1-justify-between">
-        <div class="toast__icon-wrapper toast__icon-wrapper--success ta1-margin-right-xs">
-          <svg class="ta1-icon" viewBox="0 0 16 16"><title>Success</title><g><path d="M6,15a1,1,0,0,1-.707-.293l-5-5A1,1,0,1,1,1.707,8.293L5.86,12.445,14.178.431a1,1,0,1,1,1.644,1.138l-9,13A1,1,0,0,1,6.09,15C6.06,15,6.03,15,6,15Z"></path></g></svg>
-        </div>
-    
-        <div class="ta1-text-component ta1-text-sm">
-          <h1 class="toast__title ta1-text-md">Title Five</h1>
-          <p class="toast__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo esse maiores assumenda.</p>
-        </div>
-      
-        <button class="toast__close-btn ta1-margin-left-4xs js-toast__close-btn js-tab-focus">
-          <svg class="ta1-icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11" /><line x1="11" y1="1" x2="1" y2="11" /></g></svg>
-        </button>
-      </div>
-    </div>
-</section>
-<script src="https://unpkg.com/codyhouse-framework/main/assets/js/util.js"></script>
-</body>
+    <div id="hl-aria-live-container" aria-live="polite" class="visually-hidden"></div><div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div><div id="hl-aria-live-container" aria-live="polite" class="visually-hidden"></div><div class="toast toast--top-right js-toast toast--hidden" role="alert" aria-live="assertive" aria-atomic="true" id="toast-1" style=""><div class="flex items-start justify-between"><div class="text-component text-sm"><h1 class="toast__title text-md">Title One</h1><p class="toast__p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus iusto ut, error aspernatur quaerat corrupti ipsum deleniti ratione.</p></div><button class="reset toast__close-btn margin-left-xxxxs js-toast__close-btn js-tab-focus" style="outline: none;"><svg class="icon" viewBox="0 0 12 12"><title>Close notification</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><line x1="1" y1="1" x2="11" y2="11"></line><line x1="11" y1="1" x2="1" y2="11"></line></g></svg></button></div></div></body></html>
