@@ -995,7 +995,19 @@ function resetFocusTabsStyle() {
 
 
 
-
+  <script>
+    var toasts = document.querySelectorAll('.js-toast'),
+      trigger = document.querySelector('button'),
+      index = 0;
+  
+    var openToastEvent = new CustomEvent('openToast');
+  
+    trigger.addEventListener('click', function(event){
+      if(index >= toasts.length) index = 0;
+      toasts[index].dispatchEvent(openToastEvent);
+      index = index + 1;
+    });
+  </script>
 
 
 
