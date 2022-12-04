@@ -10,7 +10,7 @@
 <section>
     <p class="ta1-color-contrast-medium ta1-margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p>
 
-    <button class="ta1-btn ta1-btn--primary" aria-controls="toast-1">Show Toast</button>
+    <button class="ta1-btn ta1-btn--primary" onclick="myToast()" aria-controls="toast-1">Show Toast</button>
     
     <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-1">
       <div class="ta1-flex ta1-items-start ta1-justify-between">
@@ -663,7 +663,7 @@ Util.removeClass = function(el, className) {
 
 // File#: _1_toast
 // Usage: codyhouse.co/license
-(function() {
+(function myToast() {
     alert("test");
   var Toasts = function() {
     this.toastsEl = document.getElementsByClassName('js-toast');
