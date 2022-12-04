@@ -1,12 +1,6 @@
 // File#: _1_toast
 // Usage: codyhouse.co/license
 (function() {
-    var toast = document.querySelector('.js-toast'), // toast element
-  openToastEvent = new CustomEvent('openToast'); // custom event
-
-// open toast
-toast.dispatchEvent(openToastEvent);
-
     var Toasts = function() {
       this.toastsEl = document.getElementsByClassName('js-toast');
       this.toastsId = getRandomInt(0, 1000);
