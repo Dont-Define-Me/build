@@ -1,13 +1,17 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/assets/css/site.css"/>
   <link rel="stylesheet" type="text/css" href="/assets/css/custom.css"/>
+  <script src="/assets/js/util.js"></script>
   <script src="/assets/js/toast.js"></script>
 </head>
 
 <body>
-  <p class="ta1-color-contrast-medium ta1-margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p>
+  <div class="container max-width-xs padding-y-xl js-cd-demo">
 
-<button class="ta1-btn ta1-btn--primary" aria-controls="toast-1">Show Toast</button>
+    <p class="color-contrast-medium margin-bottom-sm">👇 Click multiple times to show multiple notifications.</p><button class="btn btn--primary" aria-controls="toast-1">Show Toast</button>
+ <button class="ta1-btn ta1-btn--primary" aria-controls="toast-1">Show Toast</button>
+   </div>
+
 
 <div class="toast toast--hidden toast--top-right js-toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-1">
   <div class="ta1-flex ta1-items-start ta1-justify-between">
