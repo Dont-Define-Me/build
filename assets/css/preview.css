@@ -27,6 +27,7 @@ Usage: codyhouse.co/license
   
   .slideshow-pm__content {
     position: relative;
+    scale: .7;
   }
   
   .slideshow-pm__list {
@@ -149,7 +150,7 @@ Usage: codyhouse.co/license
     }
   }
   .slideshow-pm__navigation {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: var(--space-sm);
