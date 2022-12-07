@@ -2,12 +2,68 @@
     <link id="codyframe" rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/site.css"/>
   <link rel="stylesheet" type="text/css" href="/assets/css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/preview.css"/>
+  <script src="/assets/js/swipe.js"></script>
   <header class="Header Header--top">
   </header>
   </head>
   
   <section class="text-center container max-width-lg padding-y-xl">
-
+    <div class="slideshow-pm js-slideshow-pm" data-swipe="on" data-pm-nav="on">
+        <p class="se4-sr-only">Slideshow items</p>
+        
+        <div class="slideshow-pm__content">
+          <ul class="slideshow-pm__list js-slideshow-pm__list">
+            <li class="slideshow-pm__item slideshow-pm__item--selected js-slideshow-pm__item">
+              <div class="slideshow-pm__content-wrapper">
+                <h1>Slide One</h1>
+              </div>
+            </li>
+      
+            <li class="slideshow-pm__item js-slideshow-pm__item" style="background-image: url('../../../app/assets/img/slideshow-preview-mode-img-1.jpg');">
+              <div class="slideshow-pm__content-wrapper">
+                <h1>Slide Two</h1>
+              </div>
+            </li>
+      
+            <li class="slideshow-pm__item js-slideshow-pm__item">
+              <figure class="slideshow-pm__content-wrapper">
+                <img class="slideshow-pm__img" src="../../../app/assets/img/slideshow-preview-mode-img-2.svg" alt="Image description">
+              </figure>
+            </li>
+      
+            <li class="slideshow-pm__item js-slideshow-pm__item">
+              <div class="slideshow-pm__content-wrapper">
+                <h1>Slide Four</h1>
+              </div>
+            </li>
+          </ul>
+      
+          <ul>
+            <li class="slideshow-pm__control-wrapper js-slideshow-pm__control-wrapper">
+              <button class="slideshow-pm__control js-tab-focus">
+                <svg class="slideshow-pm__control-icon" viewBox="0 0 30 30">
+                  <title>Show previous slide</title>
+                  <g fill="currentColor">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 1L9 15l10 14"></path>
+                  </g>
+                </svg>
+              </button>
+            </li>
+      
+            <li class="slideshow-pm__control-wrapper js-slideshow-pm__control-wrapper">
+              <button class="slideshow-pm__control js-tab-focus">
+                <svg class="slideshow-pm__control-icon" viewBox="0 0 30 30">
+                  <title>Show next slide</title>
+                  <g fill="currentColor">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 1l10 14-10 14"></path>
+                  </g>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <div class="learnmore-header" style="z-index: 999999!important;">
