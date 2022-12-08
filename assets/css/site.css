@@ -20871,16 +20871,12 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
     letter-spacing: 0em;
     line-height: 1.2em;
     text-transform: none;
     font-family: FuturaBold;
     font-weight: 700;
     font-style: normal;
-    font-size: 14px;
-    letter-spacing: .15em;
-    line-height: 2em;
     text-transform: uppercase
 }
 
@@ -35113,7 +35109,7 @@ html .c-swatches:not(.c-swatches--show-text) .c-swatches__button {
 h3 {
     color: #fff !important;
     padding-top: 10px !important;
-    font-size: larger !important
+    font-size: smaller !important
 }
 
 .markdown-block .ui-closed:before {
