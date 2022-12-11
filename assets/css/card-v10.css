@@ -1,12 +1,4 @@
-/* -------------------------------- 
 
-File#: _1_card-v10
-Title: Card v9
-Descr: Container of information used as teaser for further content exploration
-Usage: codyhouse.co/license
-
--------------------------------- */
-/* #region (--state-1 & --state-2) */
 .card-v10 {
     position: relative;
     z-index: 1;
@@ -107,7 +99,7 @@ Usage: codyhouse.co/license
             transform: translateY(2px);
   }
   
-  /* #endregion */
+
   /* #region (--featured) */
   @media (min-width: 64rem) {
     .card-v10--featured {
