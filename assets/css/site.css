@@ -20871,9 +20871,8 @@ h2 {
 }
 
 h3 {
-    letter-spacing: 0em;
-    line-height: 1.2em;
-    text-transform: none;
+    letter-spacing: .15em!important;
+    line-height: 1.2em!important;
     font-family: FuturaBold;
     font-weight: 700;
     font-style: normal;
