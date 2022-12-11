@@ -35109,7 +35109,7 @@ html .c-swatches:not(.c-swatches--show-text) .c-swatches__button {
 h3 {
     color: #fff !important;
     padding-top: 10px !important;
-    font-size: smaller !important
+    font-size: larger !important
 }
 
 .markdown-block .ui-closed:before {
