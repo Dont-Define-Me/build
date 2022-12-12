@@ -470,7 +470,8 @@
   
   <div class="tab-features-v2__panels js-tabs__panels">
     <section id="tab-features-1" class="tab-features-v2__panel js-tabs__panel">
-      <img class="tab-features-v2__img" src="https://imgur.com/ERj9kTg.png" alt="Image description">
+      <img class="tab-features-v2__img" src="https://imgur.com/kqYwKSa.png" alt="Image description">
+      <img class="tab-features-v2__img tab-features-v2__img_mobile" src="https://imgur.com/ERj9kTg.png" alt="Image description">
     </section>
 
     <section id="tab-features-2" class="tab-features-v2__panel js-tabs__panel">
@@ -728,6 +729,16 @@ img, video, svg {
   display: block;
   width: 100%;
   border-radius: 0.375em;
+}
+@media (min-width: 1024px) {
+.tab-features-v2__img_mobile {
+      display:none;
+}
+}
+@media (max-width: 1024px) {
+.tab-features-v2__img {
+      display:none;
+}
 }
 
 @-webkit-keyframes tab-features-v2-panel-entry-anim {
