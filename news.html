@@ -426,7 +426,7 @@
     <li>
       <a href="#tab-features-1" class="tab-features-v2__control" aria-selected="true">
         <span class="tab-features-v2__control-title">Hoodie Szn is Here!</span>
-        <span class="tab-features-v2__control-description">Preorder your hoodie today. Releases December 17th.</span>
+        <span class="tab-features-v2__control-description">Preorder your hoodie today. Releases January 17th.</span>
       </a>
     </li>
 
@@ -445,7 +445,7 @@
     </li>
 
     <li>
-      <a href="#tab-features-4" class="tab-features-v2__control" style="display:none">
+      <a href="#tab-features-4" class="tab-features-v2__control" id="remove">
         <span class="tab-features-v2__control-title">A Message from the Creator.</span>
         <span class="tab-features-v2__control-description">Read a personal letter from John Pavek.</span>
       </a>
@@ -1050,3 +1050,8 @@ Util.getIndexInArray = function(array, el) {
     cursor: pointer;
   }
 </style>
+<script>
+  $(document).ready(function(){    
+    $("#remove").remove();
+});
+</script>
