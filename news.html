@@ -1,5 +1,10 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){    
+      $("#remove").remove();
+  });
+  </script>
   <link id="codyframe" rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/site.css"/>
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.css"/>
@@ -1051,8 +1056,3 @@ Util.getIndexInArray = function(array, el) {
     cursor: pointer;
   }
 </style>
-<script>
-  $(document).ready(function(){    
-    $("#remove").remove();
-});
-</script>
