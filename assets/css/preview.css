@@ -19,7 +19,7 @@ Usage: codyhouse.co/license
   .slideshow-pm {
     overflow: hidden;
     opacity: 0;
-    height: 75%!important;
+    height: 79%!important;
   }
   
   .slideshow-pm--js-loaded {
@@ -28,7 +28,7 @@ Usage: codyhouse.co/license
   
   .slideshow-pm__content {
     position: relative;
-    scale: .5;
+    //scale: .6;
   }
   
   .slideshow-pm__list {
@@ -196,4 +196,9 @@ Usage: codyhouse.co/license
   
   .slideshow-pm__nav-item--selected .slideshow-pm__nav-btn {
     opacity: 1;
+  }
+  @media (min-width: 1024px) {
+    .slideshow-pm__content {
+      scale: .6;
+    }
   }
