@@ -4121,7 +4121,7 @@ body::before {
       order: 5;
   }
   h3 {
-    color: white!important;
+    color: rgb(0,0,0,.8)!important;
     padding-top: 10px!important;
     font-size: larger!important;
   }
