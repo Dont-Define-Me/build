@@ -19,6 +19,7 @@ Usage: codyhouse.co/license
   .slideshow-pm {
     overflow: hidden;
     opacity: 0;
+    height: 75%;
   }
   
   .slideshow-pm--js-loaded {
