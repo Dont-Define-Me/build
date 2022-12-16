@@ -126,8 +126,8 @@ Usage: codyhouse.co/license
   .slideshow-pm__control {
     display: flex;
     background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.8);
-    height: 60px;
-    width: 30px;
+    height: 80px;
+    width: 50px;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: background 0.2s, -webkit-transform 0.2s;
