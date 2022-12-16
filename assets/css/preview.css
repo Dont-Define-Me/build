@@ -21,6 +21,10 @@ Usage: codyhouse.co/license
     opacity: 0;
     height: 79%!important;
   }
+
+  .slideshow-pm:nth-child() {
+    margin-top: -10%;
+  }
   
   .slideshow-pm--js-loaded {
     opacity: 1;
