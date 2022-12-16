@@ -60,7 +60,7 @@
   }
   
   .card-v10__excerpt {
-    font-size: var(--text-md);
+    font-size: medium;
   }
   
   .card-v10__footer {
