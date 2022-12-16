@@ -19,7 +19,7 @@ Usage: codyhouse.co/license
   .slideshow-pm {
     overflow: hidden;
     opacity: 0;
-    height: 79%!important;
+    //height: 79%!important;
   }
 
   .slideshow-pm:nth-child() {
