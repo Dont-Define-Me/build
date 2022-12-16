@@ -30914,12 +30914,12 @@ body::before {
 
 @font-face {
     font-family: 'FuturaBold';
-    src: url('https://static1.squarespace.com/static/5db1e6a3c7478369631160ae/t/5e4ef64fd52fd86f8404718f/1582233167804/Futura+Bold.otf')
+    src: url('https://static1.squarespace.com/static/5db1e6a3c7478369631160ae/t/5e4ef64fd52fd86f8404718f/1582233167804/Futura+Bold.otf');
 }
 
 @font-face {
     font-family: 'FuturaMedium';
-    src: url('/assets/fonts/FuturaPTMedium.otf')
+    src: url('/assets/fonts/FuturaPTMedium.otf');
 }
 
 @font-face {
