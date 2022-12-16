@@ -30918,6 +30918,11 @@ body::before {
 }
 
 @font-face {
+    font-family: 'FuturaMedium';
+    src: url('/assets/fonts/FuturaPTMedium.otf')
+}
+
+@font-face {
     font-family: 'Danger';
     src: url('https://static1.squarespace.com/static/5db1e6a3c7478369631160ae/t/633cc02bf3ed51122ccdff51/1664925740040/Another+Danger+-+Demo.otf')
 }
