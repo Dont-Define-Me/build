@@ -2400,6 +2400,8 @@ body::before {
   .text-center {
     //font-size:2em;
     font-weight:700!important;
+    margin-left: auto;
+    margin-right: auto;
   }
    .btnnn {
       -webkit-backdrop-filter: blur(10px);

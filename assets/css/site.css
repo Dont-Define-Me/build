@@ -33353,11 +33353,6 @@ html {
     font-weight: 600
 }
 
-.text-center {
-    //font-size: 2em;
-    font-weight: 700 !important
-}
-
 .btnnn {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(20px)
