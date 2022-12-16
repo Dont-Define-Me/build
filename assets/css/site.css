@@ -20872,7 +20872,7 @@ h2 {
 h3 {
     letter-spacing: .15em!important;
     line-height: 1.2em!important;
-    font-family: FuturaBold;
+    font-family: FuturaHeavy;
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase
@@ -31411,30 +31411,6 @@ nav.ProductItem-nav * {
     }
 }
 
-#block-yui_3_17_2_1_1605082727625_50135 h3 {
-    text-shadow: 4px 9px 6px #000 !important;
-    font-size: 1.65em;
-    padding-bottom: 15px;
-    text-align: center
-}
-
-#block-yui_3_17_2_1_1605082727625_50955 h3 {
-    text-shadow: 4px 9px 6px #000 !important;
-    font-size: 1.65em;
-    text-align: center;
-    padding-bottom: 15px
-}
-
-#block-yui_3_17_2_1_1605082727625_51768 h3 {
-    text-shadow: 4px 9px 6px #000 !important;
-    font-size: 1.65em;
-    text-align: center;
-    padding-bottom: 15px
-}
-
-#block-yui_3_17_2_1_1605152699267_20054 {
-    padding-bottom: 35px
-}
 
 .title03 {
     font-weight: 900;
@@ -35193,30 +35169,6 @@ ul {
     overflow: hidden
 }
 
-#block-yui_3_17_2_1_1642033447724_6427,
-#block-yui_3_17_2_1_1642038248710_2873,
-#block-yui_3_17_2_1_1642038248710_9141 h3 {
-    font-size: 1.5em !important;
-    white-space: nowrap !important;
-    text-align: right !important;
-    vertical-align: middle !important;
-    margin: 100% 0% 0% 0%;
-    z-index: 100 !important
-}
-
-#block-yui_3_17_2_1_1642038248710_2873 h3 {
-    white-space: nowrap !important
-}
-
-#block-yui_3_17_2_1_1642033447724_6427 h3 {
-    white-space: nowrap !important
-}
-
-#block-yui_3_17_2_1_1642038248710_16521 p {
-    font-size: 2em !important;
-    padding-bottom: 50px
-}
-
 .carsty {
     border-radius: 50%;
     background-color: #fff !important;
@@ -35233,10 +35185,6 @@ ul {
     background-color: transparent !important;
     -webkit-backdrop-filter: blur(10px) !important;
     backdrop-filter: blur(20px) !important
-}
-
-#block-yui_3_17_2_1_1642038248710_9141 h3 {
-    font-size: 1.7em !important
 }
 
 :root {
