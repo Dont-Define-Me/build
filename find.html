@@ -16,7 +16,7 @@
   </header>
   </head>
 
-
+<body>
 <section class="text-center max-width-lg padding-y-xxxl">
   <h3 style="position:relative;width: 100%;"><span style="color:rgb(0, 0, 0, .8);font-size:50px;text-shadow: 0px 2px 1px rgb(0 0 0 / 25%);">Browse around</span> & see what fits you.</h3>
     <div class="slideshow-pm js-slideshow-pm">
@@ -609,7 +609,10 @@
         @media (min-width: 1024px) {
           body::before {
             background: url('/assets/img/websitebackground.jpg');
-            background: radial-gradient(circle, rgba(250,249,246,1) 61%, rgba(250,249,246,1) 74%, rgba(0,0,0,0) 91%);
+            background-image: linear-gradient(to right, black, blue 50%, black 800px);
+            background-size: 800px 100%;
+            background-position: 50% 100%;
+            background-repeat: no-repeat;
 
           }
         }
@@ -632,19 +635,19 @@
         <div class="flex items-center">
           <img class="block width-lg height-lg radius-50% margin-right-xxs" src="../../../app/assets/img/alert-message-img-2.jpg" alt="Image description">
 
-          <p class="text-sm" style="font-family: futuraheavy;color: rgb(0,0,0,.8);"><strong style="">John</strong> <span class="color-contrast-medium" style="font-family: futuramedium;">from</span> <strong>Don't Define Me <sup>™</sup></strong></p>
+          <p class="text-sm" style="font-family: futuraheavy;color: rgb(0,0,0,.8);"><strong style="">John</strong> <span class="color-contrast-medium" style="font-family: futuramedium;">from</span> <strong>Don't Define Me<sup>™</sup></strong></p>
         </div>
       </div>
 
       <div class="text-component" style="font-size: 0.7em;">
         <h1 id="alert-msg-title" class="sr-only">Alert title</h1>
-        <p id="alert-msg-descr" class="color-contrast-medium">Wanna know something super cool? All the shirts you see are submissions made by people around the world just like you. <a class="color-contrast-higher" href="#0">Read more</a>.</p>
+        <p id="alert-msg-descr" class="color-contrast-medium">Wanna know something super cool? All the shirts here are submissions made by people around the world just like you. <a class="color-contrast-higher" href="#0">Read more</a>.</p>
       </div>
     </div>
   </div>
 
 </div>
-
+</body>
       <script>
         // File#: _2_slideshow-preview-mode
 // Usage: codyhouse.co/license
