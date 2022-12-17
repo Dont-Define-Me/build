@@ -125,6 +125,7 @@
       if( !event.target.closest('.js-modal__close') && !Util.hasClass(event.target, 'js-modal') ) return;
       event.preventDefault();
       this.closeModal();
+      alert("Hello world!");
     };
   
     Modal.prototype.trapFocus = function(event) {
