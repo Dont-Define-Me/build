@@ -31175,7 +31175,7 @@ nav.ProductItem-nav * {
     -moz-appearance: none;
     appearance: none;
     position: absolute;
-    top: 0;
+    top: -8px;
     left: 16px !important;
     display: flex;
     justify-content: center;
