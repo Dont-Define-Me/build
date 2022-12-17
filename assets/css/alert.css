@@ -16,12 +16,14 @@ Usage: codyhouse.co/license
     background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.9);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-    padding: var(--space-xxs) var(--space-sm);
+    padding: 0.5em 0.9em;
     color: var(--color-bg);
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: 0.2s;
+    border: 0;
+    scale: .9;
   }
   .alert-msg__close-btn:hover {
     background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 1);
