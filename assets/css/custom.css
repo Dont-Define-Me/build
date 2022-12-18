@@ -165,6 +165,7 @@ body::before {
         font-size: 12px;
       
     }
+    /*
     variant-select-wrapper {
     }
     .variant-select-wrapper option {
@@ -295,6 +296,7 @@ body::before {
     {
         z-index:2;
     }
+    */
     .td-cards--v5 {
         --card-ratio: 960/740; // card width/height
       display: block!important;
