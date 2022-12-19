@@ -69,12 +69,12 @@
      <div id="theme-toggle" class="padding-y-sm">
          <ul class="radio-switch-v2">
    <li class="radio-switch-v2__item">
-     <input class="radio-switch-v2__input" type="radio" name="radioSwitch2" id="radio1" data-option-theme="light" checked>
+     <input class="radio-switch-v2__input" type="radio" name="radioSwitch2" id="radio1" data-option-theme="dark" checked>
      <label class="radio-switch-v2__label" for="radio1">Black</label>
    </li>
  
    <li class="radio-switch-v2__item">
-     <input class="radio-switch-v2__input" type="radio" name="radioSwitch2" id="radio2" data-option-theme="dark">
+     <input class="radio-switch-v2__input" type="radio" name="radioSwitch2" id="radio2" data-option-theme="light">
      <label class="radio-switch-v2__label" for="radio2">White</label>
      <div aria-hidden="true" class="radio-switch-v2__toggle"><span class="radio-switch-v2__marker"></span></div>
    </li>
@@ -932,7 +932,7 @@
      
    var toggle = document.getElementById("theme-toggle");
  
- var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark");
+ var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
  if (storedTheme)
      document.documentElement.setAttribute('data-theme', storedTheme)
  
