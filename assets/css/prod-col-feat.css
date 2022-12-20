@@ -1,0 +1,31 @@
+/* -------------------------------- 
+
+File#: _3_product-color-feature
+Title: Product Color Feature
+Descr: A section displaying the color variations of a product
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.prod-color-feature {
+    --slideshow-height: auto;
+  }
+  
+  @media (min-width: 64rem) {
+    .prod-color-feature .color-swatches {
+      --color-swatch-size: 24px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      margin: 0 !important;
+    }
+    .prod-color-feature .color-swatches__legend {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      -webkit-clip-path: inset(50%);
+              clip-path: inset(50%);
+    }
+    .prod-color-feature .color-swatches__list {
+      grid-template-columns: var(--color-swatch-size);
+    }
+  }
