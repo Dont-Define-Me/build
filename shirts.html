@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="assets/css/alert.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/swatch.css"/> 
   <link rel="stylesheet" type="text/css" href="assets/css/slideshow.css"/> 
-  <link rel="stylesheet" type="text/css" href="assets/css/prod-col-feat.css"/> 
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <script src="/assets/js/util.js"></script>
   <script src="/assets/js/swipe.js"></script>
@@ -72,3 +71,1109 @@
       </section>
 
   </body>
+
+  <style>
+    .prod-color-feature {
+    --slideshow-height: auto;
+  }
+  
+  @media (min-width: 64rem) {
+    .prod-color-feature .color-swatches {
+      --color-swatch-size: 24px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      margin: 0 !important;
+    }
+    .prod-color-feature .color-swatches__legend {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      -webkit-clip-path: inset(50%);
+              clip-path: inset(50%);
+    }
+    .prod-color-feature .color-swatches__list {
+      grid-template-columns: var(--color-swatch-size);
+    }
+  }
+
+/* -------------------------------- 
+
+File#: _2_slideshow
+Title: Slideshow
+Descr: Show a collection of items one at a time
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+    --slideshow-height: 280px;
+    --slideshow-fade-transition-duration: 0.25s;
+    --slideshow-slide-transition-duration: 0.35s;
+    --slideshow-prx-transition-duration: 0.5s;
+    --slideshow-btn-width: 1.6em;
+    --slideshow-btn-height: 3.2em;
+    --slideshow-btn-icon-size: 1.6em;
+    --slideshow-btn-offset: var(--space-xs);
+  }
+  @media (min-width: 48rem) {
+    :root {
+      --slideshow-height: 380px;
+    }
+  }
+  @media (min-width: 64rem) {
+    :root {
+      --slideshow-height: 480px;
+    }
+  }
+  @media (min-width: 80rem) {
+    :root {
+      --slideshow-height: 580px;
+    }
+  }
+  
+  .slideshow__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--slideshow-height);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .slideshow__item:focus {
+    outline: none;
+  }
+  
+  .slideshow--ratio-16\:9 .slideshow__item {
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+  
+  .slideshow--ratio-4\:3 .slideshow__item {
+    height: 0;
+    padding-bottom: 75%;
+  }
+  
+  .slideshow--ratio-1\:1 .slideshow__item {
+    height: 0;
+    padding-bottom: 100%;
+  }
+  
+  .slideshow {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .slideshow__content {
+    overflow: hidden;
+  }
+  
+  .slideshow__item {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+  }
+  
+  .slideshow__item--selected {
+    position: relative;
+    z-index: 3;
+    visibility: visible;
+  }
+  
+  .slideshow--transition-fade .slideshow__item {
+    opacity: 0;
+    transition: opacity 0s var(--slideshow-fade-transition-duration), visibility 0s var(--slideshow-fade-transition-duration);
+  }
+  
+  .slideshow--transition-fade .slideshow__item--selected {
+    opacity: 1;
+    transition: opacity var(--slideshow-fade-transition-duration);
+  }
+  
+  .slideshow--transition-slide .slideshow__item {
+    -webkit-animation-duration: var(--slideshow-slide-transition-duration);
+            animation-duration: var(--slideshow-slide-transition-duration);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: var(--ease-out);
+            animation-timing-function: var(--ease-out);
+  }
+  .slideshow--transition-slide .slideshow__item > * {
+    visibility: hidden;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--selected > * {
+    visibility: visible;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--slide-in-left {
+    -webkit-animation-name: slide-in-left;
+            animation-name: slide-in-left;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--slide-in-right {
+    -webkit-animation-name: slide-in-right;
+            animation-name: slide-in-right;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--slide-out-left {
+    -webkit-animation-name: slide-out-left;
+            animation-name: slide-out-left;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--slide-out-right {
+    -webkit-animation-name: slide-out-right;
+            animation-name: slide-out-right;
+  }
+  
+  .slideshow--transition-slide .slideshow__item--slide-out-left,
+  .slideshow--transition-slide .slideshow__item--slide-out-right {
+    z-index: 2;
+  }
+  .slideshow--transition-slide .slideshow__item--slide-out-left.slideshow__item--selected,
+  .slideshow--transition-slide .slideshow__item--slide-out-right.slideshow__item--selected {
+    z-index: 3;
+  }
+  .slideshow--transition-slide .slideshow__item--slide-out-left > *,
+  .slideshow--transition-slide .slideshow__item--slide-out-right > * {
+    visibility: visible;
+  }
+  
+  @-webkit-keyframes slide-in-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes slide-in-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes slide-out-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  @keyframes slide-out-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  @-webkit-keyframes slide-out-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  @keyframes slide-out-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  .slideshow--transition-prx .slideshow__item {
+    -webkit-animation-duration: var(--slideshow-prx-transition-duration);
+            animation-duration: var(--slideshow-prx-transition-duration);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: var(--ease-out);
+            animation-timing-function: var(--ease-out);
+  }
+  .slideshow--transition-prx .slideshow__item > * {
+    visibility: hidden;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--selected > * {
+    visibility: visible;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--prx-in-left {
+    -webkit-animation-name: prx-in-left;
+            animation-name: prx-in-left;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--prx-in-right {
+    -webkit-animation-name: prx-in-right;
+            animation-name: prx-in-right;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--prx-out-left {
+    -webkit-animation-name: prx-out-left;
+            animation-name: prx-out-left;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--prx-out-right {
+    -webkit-animation-name: prx-out-right;
+            animation-name: prx-out-right;
+  }
+  
+  .slideshow--transition-prx .slideshow__item--prx-out-left,
+  .slideshow--transition-prx .slideshow__item--prx-out-right {
+    z-index: 2;
+  }
+  .slideshow--transition-prx .slideshow__item--prx-out-left.slideshow__item--selected,
+  .slideshow--transition-prx .slideshow__item--prx-out-right.slideshow__item--selected {
+    z-index: 3;
+  }
+  .slideshow--transition-prx .slideshow__item--prx-out-left > *,
+  .slideshow--transition-prx .slideshow__item--prx-out-right > * {
+    visibility: visible;
+  }
+  
+  @-webkit-keyframes prx-in-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  
+  @keyframes prx-in-left {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes prx-in-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @keyframes prx-in-right {
+    0% {
+      visibility: visible;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes prx-out-left {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      opacity: 0.3;
+      -webkit-transform: translateX(40%);
+              transform: translateX(40%);
+    }
+  }
+  @keyframes prx-out-left {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      opacity: 0.3;
+      -webkit-transform: translateX(40%);
+              transform: translateX(40%);
+    }
+  }
+  @-webkit-keyframes prx-out-right {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      opacity: 0.3;
+      -webkit-transform: translateX(-40%);
+              transform: translateX(-40%);
+    }
+  }
+  @keyframes prx-out-right {
+    0% {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      opacity: 0.3;
+      -webkit-transform: translateX(-40%);
+              transform: translateX(-40%);
+    }
+  }
+  .slideshow[data-swipe=on] .slideshow__content {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .slideshow[data-swipe=on] .slideshow__content img {
+    pointer-events: none;
+  }
+  
+  .slideshow__control {
+    display: none;
+  }
+  
+  .slideshow[data-controls=hover] .slideshow__control {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .slideshow[data-controls=hover]:hover .slideshow__control {
+    opacity: 1;
+  }
+  
+  .slideshow[data-swipe=on] .slideshow__control {
+    display: none;
+  }
+  
+  .slideshow__control {
+    display: block;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .slideshow__control:first-of-type {
+    left: var(--slideshow-btn-offset);
+  }
+  .slideshow__control:last-of-type {
+    right: var(--slideshow-btn-offset);
+  }
+  
+  @media (min-width: 64rem) {
+    .slideshow[data-swipe=on] .slideshow__control {
+      display: block;
+    }
+  }
+  .slideshow__btn {
+    display: block;
+    background-color: hsla(var(--color-black-h), var(--color-black-s), var(--color-black-l), 0.75);
+    height: var(--slideshow-btn-height);
+    width: var(--slideshow-btn-width);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background 0.2s, -webkit-transform 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, -webkit-transform 0.2s;
+  }
+  .slideshow__btn:hover {
+    background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.85);
+  }
+  .slideshow__btn:hover .icon {
+    color: var(--color-bg);
+  }
+  .slideshow:not(.slideshow--is-animating) .slideshow__btn:active {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  .slideshow__btn .icon {
+    display: block;
+    width: var(--slideshow-btn-icon-size);
+    height: var(--slideshow-btn-icon-size);
+    margin: 0 auto;
+    transition: color 0.2s;
+    color: var(--color-white);
+  }
+  @supports (grid-area: auto) {
+    .slideshow__btn {
+      background-color: transparent;
+    }
+    .slideshow__btn .icon {
+      color: var(--color-contrast-higher);
+    }
+  }
+  
+  .slideshow__navigation {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+  
+  .slideshow__nav-item {
+    display: inline-block;
+    margin: 0 var(--space-xxxs);
+  }
+  .slideshow__nav-item button {
+    display: block;
+    position: relative;
+    font-size: 8px;
+    color: var(--color-contrast-high);
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .slideshow__nav-item button::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+    height: 1em;
+    width: 1em;
+    font-size: 14px;
+    border-radius: inherit;
+    border: 1px solid var(--color-contrast-high);
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    transition: 0.3s;
+  }
+  .slideshow__nav-item button:focus {
+    outline: none;
+  }
+  .slideshow__nav-item button:focus::before {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  
+  .slideshow__nav-item--selected button {
+    opacity: 1;
+  }
+  
+  @media (min-width: 64rem) {
+    .slideshow__navigation {
+      height: 40px;
+    }
+  
+    .slideshow__nav-item button {
+      font-size: 10px;
+    }
+    .slideshow__nav-item button::before {
+      font-size: 16px;
+    }
+  }
+  </style>
+
+<style>
+/* -------------------------------- 
+
+File#: _1_color-swatches
+Title: Color Swatches
+Descr: A list of selectable swatches used to show a product color variants
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+    --color-swatches-gap: var(--space-xxs);
+    --color-swatch-size: 32px;
+    --color-swatch-radius: 50%;
+  }
+  
+  .color-swatches__list {
+    display: grid;
+    grid-gap: var(--color-swatches-gap);
+    grid-template-columns: repeat(auto-fit, var(--color-swatch-size));
+  }
+  
+  .color-swatches__swatch {
+    position: relative;
+    display: block;
+    height: var(--color-swatch-size);
+    width: var(--color-swatch-size);
+    border-radius: var(--color-swatch-radius);
+    cursor: pointer;
+  }
+  .color-swatches__swatch::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.1);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  .color-swatches__swatch:hover::before {
+    border-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.3);
+  }
+  
+  .color-swatches__item--selected .color-swatches__swatch::before {
+    border-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.8);
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+  }
+    </style>
+
+    <script>
+        // File#: _1_color-swatches
+// Usage: codyhouse.co/license
+(function() {
+    var ColorSwatches = function(element) {
+      this.element = element;
+      this.select = false;
+      initCustomSelect(this); // replace <select> with custom <ul> list
+      this.list = this.element.getElementsByClassName('js-color-swatches__list')[0];
+      this.swatches = this.list.getElementsByClassName('js-color-swatches__option');
+      this.labels = this.list.getElementsByClassName('js-color-swatch__label');
+      this.selectedLabel = this.element.getElementsByClassName('js-color-swatches__color');
+      this.focusOutId = false;
+      initColorSwatches(this);
+    };
+  
+    function initCustomSelect(element) {
+      var select = element.element.getElementsByClassName('js-color-swatches__select');
+      if(select.length == 0) return;
+      element.select = select[0];
+      var customContent = '';
+      for(var i = 0; i < element.select.options.length; i++) {
+        var ariaChecked = i == element.select.selectedIndex ? 'true' : 'false',
+          customClass = i == element.select.selectedIndex ? ' color-swatches__item--selected' : '',
+          customAttributes = getSwatchCustomAttr(element.select.options[i]);
+        customContent = customContent + '<li class="color-swatches__item js-color-swatches__item'+customClass+'" role="radio" aria-checked="'+ariaChecked+'" data-value="'+element.select.options[i].value+'"><span class="js-color-swatches__option js-tab-focus" tabindex="0"'+customAttributes+'><span class="sr-only js-color-swatch__label">'+element.select.options[i].text+'</span><span aria-hidden="true" style="'+element.select.options[i].getAttribute('data-style')+'" class="color-swatches__swatch"></span></span></li>';
+      }
+  
+      var list = document.createElement("ul");
+      Util.setAttributes(list, {'class': 'color-swatches__list js-color-swatches__list', 'role': 'radiogroup'});
+  
+      list.innerHTML = customContent;
+      element.element.insertBefore(list, element.select);
+      Util.addClass(element.select, 'is-hidden');
+    };
+  
+    function initColorSwatches(element) {
+      // detect focusin/focusout event - update selected color label
+      element.list.addEventListener('focusin', function(event){
+        if(element.focusOutId) clearTimeout(element.focusOutId);
+        updateSelectedLabel(element, document.activeElement);
+      });
+      element.list.addEventListener('focusout', function(event){
+        element.focusOutId = setTimeout(function(){
+          resetSelectedLabel(element);
+        }, 200);
+      });
+  
+      // mouse move events
+      for(var i = 0; i < element.swatches.length; i++) {
+        handleHoverEvents(element, i);
+      }
+  
+      // --select variation only
+      if(element.select) {
+        // click event - select new option
+        element.list.addEventListener('click', function(event){
+          // update selected option
+          resetSelectedOption(element, event.target);
+        });
+  
+        // space key - select new option
+        element.list.addEventListener('keydown', function(event){
+          if( (event.keyCode && event.keyCode == 32 || event.key && event.key == ' ') || (event.keyCode && event.keyCode == 13 || event.key && event.key.toLowerCase() == 'enter')) {
+            // update selected option
+            resetSelectedOption(element, event.target);
+          }
+        });
+      }
+    };
+  
+    function handleHoverEvents(element, index) {
+      element.swatches[index].addEventListener('mouseenter', function(event){
+        updateSelectedLabel(element, element.swatches[index]);
+      });
+      element.swatches[index].addEventListener('mouseleave', function(event){
+        resetSelectedLabel(element);
+      });
+    };
+  
+    function resetSelectedOption(element, target) { // for --select variation only - new option selected
+      var option = target.closest('.js-color-swatches__item');
+      if(!option) return;
+      var selectedSwatch =  element.list.querySelector('.color-swatches__item--selected');
+      if(selectedSwatch) {
+        Util.removeClass(selectedSwatch, 'color-swatches__item--selected');
+        selectedSwatch.setAttribute('aria-checked', 'false');
+      }
+      Util.addClass(option, 'color-swatches__item--selected');
+      option.setAttribute('aria-checked', 'true');
+      // update select element
+      updateNativeSelect(element.select, option.getAttribute('data-value'));
+    };
+  
+    function resetSelectedLabel(element) {
+      var selectedSwatch =  element.list.getElementsByClassName('color-swatches__item--selected');
+      if(selectedSwatch.length > 0 ) updateSelectedLabel(element, selectedSwatch[0]);
+    };
+  
+    function updateSelectedLabel(element, swatch) {
+      var newLabel = swatch.getElementsByClassName('js-color-swatch__label');
+      if(newLabel.length == 0 ) return;
+      element.selectedLabel[0].textContent = newLabel[0].textContent;
+    };
+  
+    function updateNativeSelect(select, value) {
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value == value) {
+          select.selectedIndex = i; // set new value
+          select.dispatchEvent(new CustomEvent('change')); // trigger change event
+          break;
+        }
+      }
+    };
+    
+    function getSwatchCustomAttr(swatch) {
+      var customAttrArray = swatch.getAttribute('data-custom-attr');
+      if(!customAttrArray) return '';
+      var customAttr = ' ',
+        list = customAttrArray.split(',');
+      for(var i = 0; i < list.length; i++) {
+        var attr = list[i].split(':')
+        customAttr = customAttr + attr[0].trim()+'="'+attr[1].trim()+'" ';
+      }
+      return customAttr;
+    };
+  
+    //initialize the ColorSwatches objects
+    var swatches = document.getElementsByClassName('js-color-swatches');
+    if( swatches.length > 0 ) {
+      for( var i = 0; i < swatches.length; i++) {
+        new ColorSwatches(swatches[i]);
+      }
+    }
+  }());
+    </script>
+    <script>
+        // File#: _2_slideshow
+// Usage: codyhouse.co/license
+(function() {
+    var Slideshow = function(opts) {
+      this.options = Util.extend(Slideshow.defaults , opts);
+      this.element = this.options.element;
+      this.items = this.element.getElementsByClassName('js-slideshow__item');
+      this.controls = this.element.getElementsByClassName('js-slideshow__control'); 
+      this.selectedSlide = 0;
+      this.autoplayId = false;
+      this.autoplayPaused = false;
+      this.navigation = false;
+      this.navCurrentLabel = false;
+      this.ariaLive = false;
+      this.moveFocus = false;
+      this.animating = false;
+      this.supportAnimation = Util.cssSupports('transition');
+      this.animationOff = (!Util.hasClass(this.element, 'slideshow--transition-fade') && !Util.hasClass(this.element, 'slideshow--transition-slide') && !Util.hasClass(this.element, 'slideshow--transition-prx'));
+      this.animationType = Util.hasClass(this.element, 'slideshow--transition-prx') ? 'prx' : 'slide';
+      this.animatingClass = 'slideshow--is-animating';
+      initSlideshow(this);
+      initSlideshowEvents(this);
+      initAnimationEndEvents(this);
+    };
+  
+    Slideshow.prototype.showNext = function() {
+      showNewItem(this, this.selectedSlide + 1, 'next');
+    };
+  
+    Slideshow.prototype.showPrev = function() {
+      showNewItem(this, this.selectedSlide - 1, 'prev');
+    };
+  
+    Slideshow.prototype.showItem = function(index) {
+      showNewItem(this, index, false);
+    };
+  
+    Slideshow.prototype.startAutoplay = function() {
+      var self = this;
+      if(this.options.autoplay && !this.autoplayId && !this.autoplayPaused) {
+        self.autoplayId = setInterval(function(){
+          self.showNext();
+        }, self.options.autoplayInterval);
+      }
+    };
+  
+    Slideshow.prototype.pauseAutoplay = function() {
+      var self = this;
+      if(this.options.autoplay) {
+        clearInterval(self.autoplayId);
+        self.autoplayId = false;
+      }
+    };
+  
+    function initSlideshow(slideshow) { // basic slideshow settings
+      // if no slide has been selected -> select the first one
+      if(slideshow.element.getElementsByClassName('slideshow__item--selected').length < 1) Util.addClass(slideshow.items[0], 'slideshow__item--selected');
+      slideshow.selectedSlide = Util.getIndexInArray(slideshow.items, slideshow.element.getElementsByClassName('slideshow__item--selected')[0]);
+      // create an element that will be used to announce the new visible slide to SR
+      var srLiveArea = document.createElement('div');
+      Util.setAttributes(srLiveArea, {'class': 'sr-only js-slideshow__aria-live', 'aria-live': 'polite', 'aria-atomic': 'true'});
+      slideshow.element.appendChild(srLiveArea);
+      slideshow.ariaLive = srLiveArea;
+    };
+  
+    function initSlideshowEvents(slideshow) {
+      // if slideshow navigation is on -> create navigation HTML and add event listeners
+      if(slideshow.options.navigation) {
+        // check if navigation has already been included
+        if(slideshow.element.getElementsByClassName('js-slideshow__navigation').length == 0) {
+          var navigation = document.createElement('ol'),
+            navChildren = '';
+  
+          var navClasses = slideshow.options.navigationClass+' js-slideshow__navigation';
+          if(slideshow.items.length <= 1) {
+            navClasses = navClasses + ' is-hidden';
+          }
+          
+          navigation.setAttribute('class', navClasses);
+          for(var i = 0; i < slideshow.items.length; i++) {
+            var className = (i == slideshow.selectedSlide) ? 'class="'+slideshow.options.navigationItemClass+' '+slideshow.options.navigationItemClass+'--selected js-slideshow__nav-item"' :  'class="'+slideshow.options.navigationItemClass+' js-slideshow__nav-item"',
+              navCurrentLabel = (i == slideshow.selectedSlide) ? '<span class="sr-only js-slideshow__nav-current-label">Current Item</span>' : '';
+            navChildren = navChildren + '<li '+className+'><button class="reset"><span class="sr-only">'+ (i+1) + '</span>'+navCurrentLabel+'</button></li>';
+          }
+          navigation.innerHTML = navChildren;
+          slideshow.element.appendChild(navigation);
+        }
+        
+        slideshow.navCurrentLabel = slideshow.element.getElementsByClassName('js-slideshow__nav-current-label')[0]; 
+        slideshow.navigation = slideshow.element.getElementsByClassName('js-slideshow__nav-item');
+  
+        var dotsNavigation = slideshow.element.getElementsByClassName('js-slideshow__navigation')[0];
+  
+        dotsNavigation.addEventListener('click', function(event){
+          navigateSlide(slideshow, event, true);
+        });
+        dotsNavigation.addEventListener('keyup', function(event){
+          navigateSlide(slideshow, event, (event.key.toLowerCase() == 'enter'));
+        });
+      }
+      // slideshow arrow controls
+      if(slideshow.controls.length > 0) {
+        // hide controls if one item available
+        if(slideshow.items.length <= 1) {
+          Util.addClass(slideshow.controls[0], 'is-hidden');
+          Util.addClass(slideshow.controls[1], 'is-hidden');
+        }
+        slideshow.controls[0].addEventListener('click', function(event){
+          event.preventDefault();
+          slideshow.showPrev();
+          updateAriaLive(slideshow);
+        });
+        slideshow.controls[1].addEventListener('click', function(event){
+          event.preventDefault();
+          slideshow.showNext();
+          updateAriaLive(slideshow);
+        });
+      }
+      // swipe events
+      if(slideshow.options.swipe) {
+        //init swipe
+        new SwipeContent(slideshow.element);
+        slideshow.element.addEventListener('swipeLeft', function(event){
+          slideshow.showNext();
+        });
+        slideshow.element.addEventListener('swipeRight', function(event){
+          slideshow.showPrev();
+        });
+      }
+      // autoplay
+      if(slideshow.options.autoplay) {
+        slideshow.startAutoplay();
+        // pause autoplay if user is interacting with the slideshow
+        if(!slideshow.options.autoplayOnHover) {
+          slideshow.element.addEventListener('mouseenter', function(event){
+            slideshow.pauseAutoplay();
+            slideshow.autoplayPaused = true;
+          });
+          slideshow.element.addEventListener('mouseleave', function(event){
+            slideshow.autoplayPaused = false;
+            slideshow.startAutoplay();
+          });
+        }
+        if(!slideshow.options.autoplayOnFocus) {
+          slideshow.element.addEventListener('focusin', function(event){
+            slideshow.pauseAutoplay();
+            slideshow.autoplayPaused = true;
+          });
+          slideshow.element.addEventListener('focusout', function(event){
+            slideshow.autoplayPaused = false;
+            slideshow.startAutoplay();
+          });
+        }
+      }
+      // detect if external buttons control the slideshow
+      var slideshowId = slideshow.element.getAttribute('id');
+      if(slideshowId) {
+        var externalControls = document.querySelectorAll('[data-controls="'+slideshowId+'"]');
+        for(var i = 0; i < externalControls.length; i++) {
+          (function(i){externalControlSlide(slideshow, externalControls[i]);})(i);
+        }
+      }
+      // custom event to trigger selection of a new slide element
+      slideshow.element.addEventListener('selectNewItem', function(event){
+        // check if slide is already selected
+        if(event.detail) {
+          if(event.detail - 1 == slideshow.selectedSlide) return;
+          showNewItem(slideshow, event.detail - 1, false);
+        }
+      });
+  
+      // keyboard navigation
+      slideshow.element.addEventListener('keydown', function(event){
+        if(event.keyCode && event.keyCode == 39 || event.key && event.key.toLowerCase() == 'arrowright') {
+          slideshow.showNext();
+        } else if(event.keyCode && event.keyCode == 37 || event.key && event.key.toLowerCase() == 'arrowleft') {
+          slideshow.showPrev();
+        }
+      });
+    };
+  
+    function navigateSlide(slideshow, event, keyNav) { 
+      // user has interacted with the slideshow navigation -> update visible slide
+      var target = ( Util.hasClass(event.target, 'js-slideshow__nav-item') ) ? event.target : event.target.closest('.js-slideshow__nav-item');
+      if(keyNav && target && !Util.hasClass(target, 'slideshow__nav-item--selected')) {
+        slideshow.showItem(Util.getIndexInArray(slideshow.navigation, target));
+        slideshow.moveFocus = true;
+        updateAriaLive(slideshow);
+      }
+    };
+  
+    function initAnimationEndEvents(slideshow) {
+      // remove animation classes at the end of a slide transition
+      for( var i = 0; i < slideshow.items.length; i++) {
+        (function(i){
+          slideshow.items[i].addEventListener('animationend', function(){resetAnimationEnd(slideshow, slideshow.items[i]);});
+          slideshow.items[i].addEventListener('transitionend', function(){resetAnimationEnd(slideshow, slideshow.items[i]);});
+        })(i);
+      }
+    };
+  
+    function resetAnimationEnd(slideshow, item) {
+      setTimeout(function(){ // add a delay between the end of animation and slideshow reset - improve animation performance
+        if(Util.hasClass(item,'slideshow__item--selected')) {
+          if(slideshow.moveFocus) Util.moveFocus(item);
+          emitSlideshowEvent(slideshow, 'newItemVisible', slideshow.selectedSlide);
+          slideshow.moveFocus = false;
+        }
+        Util.removeClass(item, 'slideshow__item--'+slideshow.animationType+'-out-left slideshow__item--'+slideshow.animationType+'-out-right slideshow__item--'+slideshow.animationType+'-in-left slideshow__item--'+slideshow.animationType+'-in-right');
+        item.removeAttribute('aria-hidden');
+        slideshow.animating = false;
+        Util.removeClass(slideshow.element, slideshow.animatingClass); 
+      }, 100);
+    };
+  
+    function showNewItem(slideshow, index, bool) {
+      if(slideshow.items.length <= 1) return;
+      if(slideshow.animating && slideshow.supportAnimation) return;
+      slideshow.animating = true;
+      Util.addClass(slideshow.element, slideshow.animatingClass); 
+      if(index < 0) index = slideshow.items.length - 1;
+      else if(index >= slideshow.items.length) index = 0;
+      // skip slideshow item if it is hidden
+      if(bool && Util.hasClass(slideshow.items[index], 'is-hidden')) {
+        slideshow.animating = false;
+        index = bool == 'next' ? index + 1 : index - 1;
+        showNewItem(slideshow, index, bool);
+        return;
+      }
+      // index of new slide is equal to index of slide selected item
+      if(index == slideshow.selectedSlide) {
+        slideshow.animating = false;
+        return;
+      }
+      var exitItemClass = getExitItemClass(slideshow, bool, slideshow.selectedSlide, index);
+      var enterItemClass = getEnterItemClass(slideshow, bool, slideshow.selectedSlide, index);
+      // transition between slides
+      if(!slideshow.animationOff) Util.addClass(slideshow.items[slideshow.selectedSlide], exitItemClass);
+      Util.removeClass(slideshow.items[slideshow.selectedSlide], 'slideshow__item--selected');
+      slideshow.items[slideshow.selectedSlide].setAttribute('aria-hidden', 'true'); //hide to sr element that is exiting the viewport
+      if(slideshow.animationOff) {
+        Util.addClass(slideshow.items[index], 'slideshow__item--selected');
+      } else {
+        Util.addClass(slideshow.items[index], enterItemClass+' slideshow__item--selected');
+      }
+      // reset slider navigation appearance
+      resetSlideshowNav(slideshow, index, slideshow.selectedSlide);
+      slideshow.selectedSlide = index;
+      // reset autoplay
+      slideshow.pauseAutoplay();
+      slideshow.startAutoplay();
+      // reset controls/navigation color themes
+      resetSlideshowTheme(slideshow, index);
+      // emit event
+      emitSlideshowEvent(slideshow, 'newItemSelected', slideshow.selectedSlide);
+      if(slideshow.animationOff) {
+        slideshow.animating = false;
+        Util.removeClass(slideshow.element, slideshow.animatingClass);
+      }
+    };
+  
+    function getExitItemClass(slideshow, bool, oldIndex, newIndex) {
+      var className = '';
+      if(bool) {
+        className = (bool == 'next') ? 'slideshow__item--'+slideshow.animationType+'-out-right' : 'slideshow__item--'+slideshow.animationType+'-out-left'; 
+      } else {
+        className = (newIndex < oldIndex) ? 'slideshow__item--'+slideshow.animationType+'-out-left' : 'slideshow__item--'+slideshow.animationType+'-out-right';
+      }
+      return className;
+    };
+  
+    function getEnterItemClass(slideshow, bool, oldIndex, newIndex) {
+      var className = '';
+      if(bool) {
+        className = (bool == 'next') ? 'slideshow__item--'+slideshow.animationType+'-in-right' : 'slideshow__item--'+slideshow.animationType+'-in-left'; 
+      } else {
+        className = (newIndex < oldIndex) ? 'slideshow__item--'+slideshow.animationType+'-in-left' : 'slideshow__item--'+slideshow.animationType+'-in-right';
+      }
+      return className;
+    };
+  
+    function resetSlideshowNav(slideshow, newIndex, oldIndex) {
+      if(slideshow.navigation) {
+        Util.removeClass(slideshow.navigation[oldIndex], 'slideshow__nav-item--selected');
+        Util.addClass(slideshow.navigation[newIndex], 'slideshow__nav-item--selected');
+        slideshow.navCurrentLabel.parentElement.removeChild(slideshow.navCurrentLabel);
+        slideshow.navigation[newIndex].getElementsByTagName('button')[0].appendChild(slideshow.navCurrentLabel);
+      }
+    };
+  
+    function resetSlideshowTheme(slideshow, newIndex) {
+      var dataTheme = slideshow.items[newIndex].getAttribute('data-theme');
+      if(dataTheme) {
+        if(slideshow.navigation) slideshow.navigation[0].parentElement.setAttribute('data-theme', dataTheme);
+        if(slideshow.controls[0]) slideshow.controls[0].parentElement.setAttribute('data-theme', dataTheme);
+      } else {
+        if(slideshow.navigation) slideshow.navigation[0].parentElement.removeAttribute('data-theme');
+        if(slideshow.controls[0]) slideshow.controls[0].parentElement.removeAttribute('data-theme');
+      }
+    };
+  
+    function emitSlideshowEvent(slideshow, eventName, detail) {
+      var event = new CustomEvent(eventName, {detail: detail});
+      slideshow.element.dispatchEvent(event);
+    };
+  
+    function updateAriaLive(slideshow) {
+      slideshow.ariaLive.innerHTML = 'Item '+(slideshow.selectedSlide + 1)+' of '+slideshow.items.length;
+    };
+  
+    function externalControlSlide(slideshow, button) { // control slideshow using external element
+      button.addEventListener('click', function(event){
+        var index = button.getAttribute('data-index');
+        if(!index || index == slideshow.selectedSlide + 1) return;
+        event.preventDefault();
+        showNewItem(slideshow, index - 1, false);
+      });
+    };
+  
+    Slideshow.defaults = {
+      element : '',
+      navigation : true,
+      autoplay : false,
+      autoplayOnHover: false,
+      autoplayOnFocus: false,
+      autoplayInterval: 5000,
+      navigationItemClass: 'slideshow__nav-item',
+      navigationClass: 'slideshow__navigation',
+      swipe: false
+    };
+  
+    window.Slideshow = Slideshow;
+    
+    //initialize the Slideshow objects
+    var slideshows = document.getElementsByClassName('js-slideshow');
+    if( slideshows.length > 0 ) {
+      for( var i = 0; i < slideshows.length; i++) {
+        (function(i){
+          var navigation = (slideshows[i].getAttribute('data-navigation') && slideshows[i].getAttribute('data-navigation') == 'off') ? false : true,
+            autoplay = (slideshows[i].getAttribute('data-autoplay') && slideshows[i].getAttribute('data-autoplay') == 'on') ? true : false,
+            autoplayOnHover = (slideshows[i].getAttribute('data-autoplay-hover') && slideshows[i].getAttribute('data-autoplay-hover') == 'on') ? true : false,
+            autoplayOnFocus = (slideshows[i].getAttribute('data-autoplay-focus') && slideshows[i].getAttribute('data-autoplay-focus') == 'on') ? true : false,
+            autoplayInterval = (slideshows[i].getAttribute('data-autoplay-interval')) ? slideshows[i].getAttribute('data-autoplay-interval') : 5000,
+            swipe = (slideshows[i].getAttribute('data-swipe') && slideshows[i].getAttribute('data-swipe') == 'on') ? true : false,
+            navigationItemClass = slideshows[i].getAttribute('data-navigation-item-class') ? slideshows[i].getAttribute('data-navigation-item-class') : 'slideshow__nav-item',
+            navigationClass = slideshows[i].getAttribute('data-navigation-class') ? slideshows[i].getAttribute('data-navigation-class') : 'slideshow__navigation';
+          new Slideshow({element: slideshows[i], navigation: navigation, autoplay : autoplay, autoplayOnHover: autoplayOnHover, autoplayOnFocus: autoplayOnFocus, autoplayInterval : autoplayInterval, swipe : swipe, navigationItemClass: navigationItemClass, navigationClass: navigationClass});
+        })(i);
+      }
+    }
+  }());
+    </script>
