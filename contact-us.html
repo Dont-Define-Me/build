@@ -1,0 +1,205 @@
+<head>
+  
+    <link id="codyframe" rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/site.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/preview.css"/>
+  <link rel="stylesheet" type="text/css" href="/assets/css/card-v10.css"/> 
+  <link rel="stylesheet" type="text/css" href="/assets/css/modal.css"/> 
+  <link rel="stylesheet" type="text/css" href="/assets/css/alert.css"/> 
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <script src="/assets/js/util.js"></script>
+  <script src="/assets/js/swipe.js"></script>
+  <script src="/assets/js/prev.js"></script>
+  <script src="/assets/js/modal.js"></script>
+  <header class="Header Header--top">
+  </header>
+  </head>
+
+  <body>
+    <section class="text-center max-width-lg padding-y-xxxl">
+        <section class="contact-v3 position-relative z-index-1">
+            <div class="container max-width-xs margin-bottom-lg">
+              <div class="text-component text-center">
+                <h1>Contact Us</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus eos impedit nesciunt voluptates magni vero itaque.</p>
+              </div>
+            </div>
+          
+            <div class="container max-width-adaptive-md">
+              <div class="grid gap-lg">
+                <div class="col-6@md">
+                  <dl class="details-list details-list--rows">
+                    <div class="details-list__item padding-y-md">
+                      <dt class="font-bold margin-bottom-xxs">Address</dt>
+                      <dd class="line-height-md">
+                        86  Whitby Road <br>IP20 6JA <br>London, UK
+                      </dd>
+                    </div>
+                  
+                    <div class="details-list__item padding-y-md">
+                      <dt class="font-bold margin-bottom-xxs">Email</dt>
+                      <dd>
+                        <a href="mailto:webmaster@example.com">hello@myemail.com</a>
+                      </dd>
+                    </div>
+                  
+                    <div class="details-list__item padding-y-md">
+                      <dt class="font-bold margin-bottom-xxs">Phone</dt>
+                      <dd class="line-height-md">
+                        <p><a href="tel:+44 7656 6455">+44 7656 6455</a></p>
+                        <p class="color-contrast-medium">Mon - Fri, 9AM - 5PM</p>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+          
+                <div class="col-6@md">
+                  <form>
+                    <div class="margin-bottom-sm">
+                      <label class="form-label margin-bottom-xxs" for="contactName">Name</label>
+                      <input class="form-control width-100%" type="text" name="contactName" id="contactName" required>
+                    </div>
+                
+                    <div class="margin-bottom-sm">
+                      <label class="form-label margin-bottom-xxs" for="contactEmail">Email</label>
+                      <input class="form-control width-100%" type="email" name="contactEmail" id="contactEmail">
+                    </div>
+                
+                    <div class="margin-bottom-sm">
+                      <label class="form-label margin-bottom-xxs" for="contactMessage">Message</label>
+                      <textarea class="form-control width-100%" rows="9" name="contactMessage" id="contactMessage"></textarea>
+                    </div>
+                  
+                    <div class="text-right">
+                      <button class="btn btn--primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          
+            <div role="application" class="google-maps google-maps--ratio-3:1 margin-top-lg js-google-maps" data-coordinates="51.5658015,-0.40339"><!-- Google Map --></div>
+          </section>
+          <!-- 
+            ⚠️ Make sure to include the Google Maps script right before your page body closing tag
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initGoogleMap"></script> 
+            Replace 'YOUR_API_KEY' with your google maps API key
+          -->
+    </section>
+  </body>
+
+  <style>
+    /* -------------------------------- 
+
+File#: _1_details-list
+Title: Details List
+Descr: Pairs of related information displayed in a list
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --details-list-border-width: 1px;
+  --details-list-border-opacity: 0.15;
+}
+
+.details-list--rows .details-list__item {
+  border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+}
+.details-list--rows .details-list__item:last-child {
+  border-bottom: none;
+}
+
+.details-list--cols .details-list__item {
+  border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+}
+.details-list--cols .details-list__item:last-child {
+  border-right: none;
+}
+
+@media (min-width: 32rem) {
+  .details-list--rows\@xs .details-list__item {
+    border-right: 0;
+    border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--rows\@xs .details-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .details-list--cols\@xs .details-list__item {
+    border-bottom: 0;
+    border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--cols\@xs .details-list__item:last-child {
+    border-right: none;
+  }
+}
+@media (min-width: 48rem) {
+  .details-list--rows\@sm .details-list__item {
+    border-right: 0;
+    border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--rows\@sm .details-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .details-list--cols\@sm .details-list__item {
+    border-bottom: 0;
+    border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--cols\@sm .details-list__item:last-child {
+    border-right: none;
+  }
+}
+@media (min-width: 64rem) {
+  .details-list--rows\@md .details-list__item {
+    border-right: 0;
+    border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--rows\@md .details-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .details-list--cols\@md .details-list__item {
+    border-bottom: 0;
+    border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--cols\@md .details-list__item:last-child {
+    border-right: none;
+  }
+}
+@media (min-width: 80rem) {
+  .details-list--rows\@lg .details-list__item {
+    border-right: 0;
+    border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--rows\@lg .details-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .details-list--cols\@lg .details-list__item {
+    border-bottom: 0;
+    border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--cols\@lg .details-list__item:last-child {
+    border-right: none;
+  }
+}
+@media (min-width: 90rem) {
+  .details-list--rows\@xl .details-list__item {
+    border-right: 0;
+    border-bottom: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--rows\@xl .details-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .details-list--cols\@xl .details-list__item {
+    border-bottom: 0;
+    border-right: var(--details-list-border-width) solid hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), var(--details-list-border-opacity));
+  }
+  .details-list--cols\@xl .details-list__item:last-child {
+    border-right: none;
+  }
+}
+  </style>
